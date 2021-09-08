@@ -6,6 +6,8 @@
 
 ![image](https://user-images.githubusercontent.com/2653167/124158108-c14ca380-da56-11eb-967e-69cde37ca8eb.png)
 
+[Anon vs Moloch Figma Link](https://www.figma.com/file/fkUp0qDrXAtSLix5dGMe6V/AnonVSMoloch?node-id=0%3A1)
+
 
 # 🏄‍♂️ Quick Start
 
