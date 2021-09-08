@@ -167,7 +167,7 @@ function App(props) {
   /* 🔥 This hook will get the price of Gas from ⛽️ EtherGasStation */
   const gasPrice = useGasPrice(targetNetwork, "fast");
   // Use your injected provider from 🦊 Metamask or if you don't have it then instantly generate a 🔥 burner wallet.
-  const userSigner = useUserSigner(injectedProvider, localProvider);
+  const userSigner = useUserSigner(injectedProvider, localProvider, false); // the 3rd arg is for burner wallet
 
   useEffect(() => {
     async function getAddress() {
@@ -459,7 +459,7 @@ function App(props) {
           <Route exact path="/">
 
             <Contract
-              name="YourContract"
+              name="YourCollectible"
               signer={userSigner}
               provider={localProvider}
               address={address}
