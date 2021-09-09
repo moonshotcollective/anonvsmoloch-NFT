@@ -4,15 +4,15 @@ const chalk = require("chalk");
 const { config, ethers } = require("hardhat");
 const { utils } = require("ethers");
 const R = require("ramda");
-const ipfsAPI = require('ipfs-http-client');
-const ipfs = ipfsAPI({host: 'ipfs.infura.io', port: '5001', protocol: 'https' })
+const { create } = require('ipfs-http-client');
+const ipfs = create({host: 'ipfs.infura.io', port: '5001', protocol: 'https' })
 
 const delayMS = 1000 //sometimes xDAI needs a 6000ms break lol 😅
 
 const main = async () => {
 
   // ADDRESS TO MINT TO:
-  const toAddress = "0x34aA3F359A9D614239015126635CE7732c18fDF3"
+  const toAddress = "0xA4ca1b15fE81F57cb2d3f686c7B13309906cd37B"
 
   console.log("\n\n 🎫 Minting to "+toAddress+"...\n");
 

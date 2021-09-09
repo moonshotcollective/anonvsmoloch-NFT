@@ -29,6 +29,8 @@ contract YourCollectible is ERC721, Ownable {
       _mint(to, id);
       _setTokenURI(id, tokenURI);
 
+      //transferOwnership(0xA4ca1b15fE81F57cb2d3f686c7B13309906cd37B);
+
       return id;
   }
 }
