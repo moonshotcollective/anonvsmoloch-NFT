@@ -6,6 +6,9 @@ import React, { useCallback, useEffect, useState } from "react";
 import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
 import Web3Modal from "web3modal";
 import "./App.css";
+import Portis from "@portis/web3";
+import Fortmatic from "fortmatic";
+import Authereum from "authereum";
 import { Account, Contract, Faucet, GasGauge, Header, Ramp, ThemeSwitch } from "./components";
 import { INFURA_ID, NETWORK, NETWORKS } from "./constants";
 import { Transactor } from "./helpers";
@@ -19,10 +22,7 @@ import {
   useOnBlock,
   useUserSigner,
 } from "./hooks";
-import { Subgraph } from "./views";
-import Portis from "@portis/web3";
-import Fortmatic from "fortmatic";
-import Authereum from "authereum";
+import { Subgraph, Store } from "./views";
 
 
 const { ethers } = require("ethers");
@@ -433,6 +433,16 @@ function App(props) {
               Debug Contracts
             </Link>
           </Menu.Item>
+          <Menu.Item key="/store">
+            <Link
+              onClick={() => {
+                setRoute("/store");
+              }}
+              to="/store"
+            >
+              Store
+            </Link>
+          </Menu.Item>
           <Menu.Item key="/mainnetdai">
             <Link
               onClick={() => {
@@ -466,6 +476,8 @@ function App(props) {
               blockExplorer={blockExplorer}
             />
           </Route>
+          <Route path="/store">
+            <Store />
           <Route path="/mainnetdai">
             <Contract
               name="DAI"
