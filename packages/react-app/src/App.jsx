@@ -6,7 +6,7 @@ import ReactJson from "react-json-view";
 import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
 import Web3Modal from "web3modal";
 import "./App.css";
-import { Account, Address, AddressInput, Contract, Faucet, GasGauge, Header, Ramp, ThemeSwitch } from "./components";
+import { Account, Address, AddressInput, Contract, Faucet, GasGauge, Header, Ramp, ThemeSwitch, Navbar } from "./components";
 import { INFURA_ID, NETWORK, NETWORKS } from "./constants";
 import { Transactor } from "./helpers";
 import {
@@ -452,13 +452,26 @@ function App(props) {
             <img className="image-4" src={image41x} />
             <div className="rectangle-923"></div>
           </div>
-          <img className="group-33927" src={group339272x} />
+          <PageHeader
+              extra={[
+                <Image className="group-33927" src={group339272x} />,
+                <div className="menu-items spacemono-normal-green-sheen-16px">
+                  <Image className="group-33970" src={group339702x} />
+                  <div className="top-navbar">Explore Editions</div>
+                  <div className="top-navbar">How It Works</div>
+                  <div className="top-navbar">About</div>
+                </div>,
+              ]}
+          />
+          <Image className="group-33927" src={group339272x} />
           <div className="menu-items spacemono-normal-green-sheen-16px">
-            <img className="group-33970" src={group339702x} />
+            <Image className="group-33970" src={group339702x} />
             <div className="top-navbar">Explore Editions</div>
             <div className="top-navbar">How It Works</div>
             <div className="top-navbar">About</div>
           </div>
+
+          {/* <Navbar /> */}
 
           <Menu mode="horizontal" >
             <Menu.Item key="mail">
