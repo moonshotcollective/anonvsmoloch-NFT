@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable jsx-a11y/alt-text */
 import WalletConnectProvider from "@walletconnect/web3-provider";
 import { Alert, Button, Card, Col, Input, List, Menu, Row, Image, PageHeader } from "antd";
 import "antd/dist/antd.css";
@@ -261,7 +263,7 @@ function App(props) {
       setYourCollectibles(collectibleUpdate);
     };
     updateYourCollectibles();
-  }, [address, yourBalance]);
+  }, [address, yourBalance, balance, readContracts, localChainId]);
 
   /*
 	const addressFromENS = useResolveName(mainnetProvider, "austingriffith.eth");
@@ -304,6 +306,8 @@ function App(props) {
     readContracts,
     writeContracts,
     mainnetContracts,
+    localChainId,
+    myMainnetDAIBalance,
   ]);
 
   let networkDisplay = "";
@@ -413,7 +417,7 @@ function App(props) {
     !faucetClicked &&
     localProvider &&
     localProvider._network &&
-    localProvider._network.chainId == 31337 &&
+    localProvider._network.chainId === 31337 &&
     yourLocalBalance &&
     ethers.utils.formatEther(yourLocalBalance) <= 0
   ) {
@@ -429,7 +433,13 @@ function App(props) {
             setFaucetClicked(true);
           }}
         >
-          💰 Grab funds from the faucet ⛽️
+          <span role="img" aria-label="money-bag">
+            💰
+          </span>{" "}
+          Grab funds from the faucet{" "}
+          <span role="img" aria-label="gas-pump">
+            ⛽️
+          </span>
         </Button>
       </div>
     );
@@ -446,25 +456,24 @@ function App(props) {
   const [transferToAddresses, setTransferToAddresses] = useState({});
 
   return (
-
-    <body style={{ margin: 0, background: '#000000'}}>
-    <input type="hidden" id="anPageName" name="page" value="v2" />
-    <div className="container-center-horizontal">
-      <div className="v2 screen">
-        <div className="overlap-group8">
-          <div className="overlap-group-1">
-            <img className="rectangle-922" src={rectangle9221x} />
-            <img className="image-4" src={image41x} />
-            <div className="rectangle-923"></div>
-          </div>
-          <img className="group-33927" src={group339272x} />
-          <div className="menu-items spacemono-normal-green-sheen-16px">
-            <img className="group-33970" src={group339702x} />
-            <div className="top-navbar">Explore Editions</div>
-            <div className="top-navbar">How It Works</div>
-            <div className="top-navbar">About</div>
-          </div>
-            <Menu mode="horizontal" >
+    <body style={{ margin: 0, background: "#000000" }}>
+      <input type="hidden" id="anPageName" name="page" value="v2" />
+      <div className="container-center-horizontal">
+        <div className="v2 screen">
+          <div className="overlap-group8">
+            <div className="overlap-group-1">
+              <img className="rectangle-922" src={rectangle9221x} />
+              <img className="image-4" src={image41x} />
+              <div className="rectangle-923" />
+            </div>
+            <img className="group-33927" src={group339272x} />
+            <div className="menu-items spacemono-normal-green-sheen-16px">
+              <img className="group-33970" src={group339702x} />
+              <div className="top-navbar">Explore Editions</div>
+              <div className="top-navbar">How It Works</div>
+              <div className="top-navbar">About</div>
+            </div>
+            <Menu mode="horizontal">
               <Menu.Item key="mail">Navigation One</Menu.Item>
               <Menu.Item key="app">Navigation Two</Menu.Item>
               <Menu.Item key="alipay">
@@ -472,84 +481,83 @@ function App(props) {
                   Navigation Four - Link
                 </a>
               </Menu.Item>
+              <Menu.Item key="store">
+                <a href="/store">Store</a>
+              </Menu.Item>
             </Menu>
 
-          <div className="text-1-2">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text .
-          </div>
-          <div className="x16d-10h-16m spacemono-normal-green-sheen-32px">16d 10h 16m</div>
-          <Button className="twitter-follow-btn">
-            <img className="vector" src={vector12x} />
-            <div className="follow">Follow</div>
-          </Button>
-          <div className="rectangle-1288"></div>
-          <div className="group-33929">
-            <h1 className="text-4">The Greatest Larp has Begun</h1>
+            <div className="text-1-2">
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text
+              .
+            </div>
+            <div className="x16d-10h-16m spacemono-normal-green-sheen-32px">16d 10h 16m</div>
+            <Button className="twitter-follow-btn">
+              <img className="vector" src={vector12x} />
+              <div className="follow">Follow</div>
+            </Button>
+            <div className="rectangle-1288" />
+            <div className="group-33929">
+              <h1 className="text-4">The Greatest Larp has Begun</h1>
 
-
-            {/* Statue Text */}
-            {/* <div className="group-33937">
+              {/* Statue Text */}
+              {/* <div className="group-33937">
               <div className="text-3 spacemono-normal-green-sheen-32px">Gitcoin Comics -Edition #2</div>
               <div className="text-2-1">
                 Lorem Ipsum is simply dummy text of the printing and typesetting .Lorem Ipsum is simply dummy text.
               </div>
             </div> */}
-          </div>
-
-          <img className="group-33928" src={group339281x} />
-
-          {/* Statues */}
-          {/* 
-          <div className="group-33952">
-            <div className="group-33949">
-              <div className="group-33964">
-                <div className="group-33959">
-                  <div className="overlap-group-2">
-                    <img className="ellipse-14" src={ellipse142x} />
-                    <img className="layer-2er-1" src={layer2er12x} />
-                  </div>
-                </div>
-              </div>
-              <div className="overlap-group1">
-                <div className="group-33948">
-                  <div className="eth-bot-statue">ETHBot Statue</div>
-                  <div className="btn-1 border-1px-jungle-green">
-                    <div className="x-eth">0.01 ETH</div>
-                  </div>
-                  <div className="text-6">
-                    <span className="span0">Only 300 Available<br /></span>
-                    <span className="span librefranklin-normal-bon-jour-22px">(</span>
-                    <span className="span2">Next one will cost 2ETH</span>
-                    <span className="span librefranklin-normal-bon-jour-22px">)</span>
-                  </div>
-                </div>
-                <img className="fasfa-info-circle" src={fasfainfocircle2x} />
-              </div>
             </div>
-            <img className="group-33948-1" src={group339482x} />
+
+            <img className="group-33928" src={group339281x} />
+
+            {/* Statues */}
+            {/* 
+            <div className="group-33952">
+              <div className="group-33949">
+                <div className="group-33964">
+                  <div className="group-33959">
+                    <div className="overlap-group-2">
+                      <img className="ellipse-14" src={ellipse142x} />
+                      <img className="layer-2er-1" src={layer2er12x} />
+                    </div>
+                  </div>
+                </div>
+                <div className="overlap-group1">
+                  <div className="group-33948">
+                    <div className="eth-bot-statue">ETHBot Statue</div>
+                    <div className="btn-1 border-1px-jungle-green">
+                      <div className="x-eth">0.01 ETH</div>
+                    </div>
+                    <div className="text-6">
+                      <span className="span0">Only 300 Available<br /></span>
+                      <span className="span librefranklin-normal-bon-jour-22px">(</span>
+                      <span className="span2">Next one will cost 2ETH</span>
+                      <span className="span librefranklin-normal-bon-jour-22px">)</span>
+                    </div>
+                  </div>
+                  <img className="fasfa-info-circle" src={fasfainfocircle2x} />
+                </div>
+              </div>
+              <img className="group-33948-1" src={group339482x} />
+            </div>
+            <img className="vector-1" src={vector2x} /> */}
           </div>
-          <img className="vector-1" src={vector2x} /> */}
-        </div>
 
-        {/* First banner */}
+          {/* First banner */}
 
-        {/* <div className="frame-14435">
-          <img className="group-33932" src={group339321x} />
-          <div className="text-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry</div>
-          <div className="btn-2 border-1px-jungle-green">
-            <img className="vector" src={vector12x} />
-            <div className="follow">Follow</div>
-          </div>
-        </div> */}
+          {/* <div className="frame-14435">
+            <img className="group-33932" src={group339321x} />
+            <div className="text-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry</div>
+            <div className="btn-2 border-1px-jungle-green">
+              <img className="vector" src={vector12x} />
+              <div className="follow">Follow</div>
+            </div>
+          </div> */}
 
-
-        {/* Overlapping Div includes NFTs for sale, mentions bar and bottom banner */}
-
-        <div className="overlap-group9">
-
-          {/* NFT for sale bar */}
-
-          {/* <div className="overlap-group2">
+          {/* Overlapping Div includes NFTs for sale, mentions bar and bottom banner */}
+          <div className="overlap-group9">
+            {/* NFT for sale bar */}
+            {/* <div className="overlap-group2">
             <img className="bg" src={bg1x} />
             <div className="rectangle-1328"></div>
             <div className="text-7">(75% proceeds go to Gitcoin Grants, 25=&gt; Artist)</div>
@@ -581,9 +589,9 @@ function App(props) {
             <div className="new">NEW</div>
           </div> */}
 
-          {/* Mentions Bar */}
+            {/* Mentions Bar */}
 
-          {/* <div className="group-33969">
+            {/* <div className="group-33969">
             <div className="overlap-group5">
               <div className="overlap-group4">
                 <div className="group-33931">
@@ -647,10 +655,9 @@ function App(props) {
             </div>
           </div> */}
 
+            {/* Bottom Banner */}
 
-          {/* Bottom Banner */}
-
-          {/* <div className="frame-14437">
+            {/* <div className="frame-14437">
             <div className="overlap-group6">
               <div className="rectangle-1324"></div>
               <img className="star-1" src={star11x} />
@@ -666,13 +673,13 @@ function App(props) {
             </div>
           </div> */}
 
-          {/* large bottom figure above banner */}
-          {/* <img className="layer-2-1" src={layer212x} /> */}
-        </div>
+            {/* large bottom figure above banner */}
+            {/* <img className="layer-2-1" src={layer212x} /> */}
+          </div>
 
-        {/* FAQ Component */}
+          {/* FAQ Component */}
 
-        {/* <div className="faq">
+          {/* <div className="faq">
           <div className="overlap-group7">
             <div className="faqs spacemono-normal-emerald-32px">FAQ’S !?</div>
             <div className="group-33939">
@@ -709,29 +716,29 @@ function App(props) {
           </div>
         </div> */}
 
-        {/* FOOTER */}
-        {/* <div className="group-33962">
-          <img className="group-33927-1" src={group3392712x} />
-          <div className="frame-14437-1">
-            <img className="frame-14436" src={frame144361x} />
-            <div className="text-19">
-              <span className="librefranklin-normal-bon-jour-20px">Powered by </span
-              ><span className="span-2 librefranklin-semi-bold-emerald-20px">Gitcoin</span
-              ><span className="librefranklin-normal-ice-cold-20px"> | Direct by</span
-              ><span className="librefranklin-normal-bon-jour-20px">&nbsp;</span
-              ><span className="span-2 librefranklin-semi-bold-emerald-20px">Devils Due</span
-              ><span className="librefranklin-normal-ice-cold-20px"> | Illustrated by</span
-              ><span className="librefranklin-normal-bon-jour-20px">&nbsp;</span
-              ><span className="span-2 librefranklin-semi-bold-emerald-20px">Josh Blaylock</span
-              ><span className="span8">&nbsp;</span><span className="librefranklin-normal-ice-cold-20px"> | Produced by</span
-              ><span className="librefranklin-normal-bon-jour-20px">&nbsp;</span
-              ><span className="librefranklin-semi-bold-emerald-20px">Devils Due </span><span className="span12"></span>
+          {/* FOOTER */}
+          {/* <div className="group-33962">
+            <img className="group-33927-1" src={group3392712x} />
+            <div className="frame-14437-1">
+              <img className="frame-14436" src={frame144361x} />
+              <div className="text-19">
+                <span className="librefranklin-normal-bon-jour-20px">Powered by </span
+                ><span className="span-2 librefranklin-semi-bold-emerald-20px">Gitcoin</span
+                ><span className="librefranklin-normal-ice-cold-20px"> | Direct by</span
+                ><span className="librefranklin-normal-bon-jour-20px">&nbsp;</span
+                ><span className="span-2 librefranklin-semi-bold-emerald-20px">Devils Due</span
+                ><span className="librefranklin-normal-ice-cold-20px"> | Illustrated by</span
+                ><span className="librefranklin-normal-bon-jour-20px">&nbsp;</span
+                ><span className="span-2 librefranklin-semi-bold-emerald-20px">Josh Blaylock</span
+                ><span className="span8">&nbsp;</span><span className="librefranklin-normal-ice-cold-20px"> | Produced by</span
+                ><span className="librefranklin-normal-bon-jour-20px">&nbsp;</span
+                ><span className="librefranklin-semi-bold-emerald-20px">Devils Due </span><span className="span12"></span>
+              </div>
             </div>
-          </div>
-        </div> */}
+          </div> */}
+        </div>
       </div>
-    </div>
-  </body>
+    </body>
   );
 }
 
