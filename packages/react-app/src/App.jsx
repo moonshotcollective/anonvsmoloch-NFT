@@ -467,7 +467,6 @@ function App(props) {
 
         <Switch>
           <Route exact path="/">
-
             <Contract
               name="YourContract"
               signer={userSigner}
@@ -477,7 +476,8 @@ function App(props) {
             />
           </Route>
           <Route path="/store">
-            <Store />
+            <Store address={address} signer={userSigner} />
+          </Route>
           <Route path="/mainnetdai">
             <Contract
               name="DAI"
