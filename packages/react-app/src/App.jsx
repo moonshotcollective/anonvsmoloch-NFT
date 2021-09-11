@@ -7,6 +7,9 @@ import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
 import Web3Modal from "web3modal";
 import "./App.css";
 import { Account, Address, AddressInput, Contract, Faucet, GasGauge, Header, Ramp, ThemeSwitch } from "./components";
+import Portis from "@portis/web3";
+import Fortmatic from "fortmatic";
+import Authereum from "authereum";
 import { INFURA_ID, NETWORK, NETWORKS } from "./constants";
 import { Transactor } from "./helpers";
 import {
@@ -19,6 +22,7 @@ import {
   useOnBlock,
   useUserSigner,
 } from "./hooks";
+import { Subgraph, Store } from "./views";
 
 // These assets will be used. Code using this is commented out
 import gitcoinlogo from "./assets/gitcoinlogo.svg";
@@ -442,6 +446,7 @@ function App(props) {
   const [transferToAddresses, setTransferToAddresses] = useState({});
 
   return (
+
     <body style={{ margin: 0, background: '#000000'}}>
     <input type="hidden" id="anPageName" name="page" value="v2" />
     <div className="container-center-horizontal">
