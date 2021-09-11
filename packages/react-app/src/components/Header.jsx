@@ -1,12 +1,18 @@
-import { PageHeader } from "antd";
+import { PageHeader, Image } from "antd";
 import React from "react";
+import anonvsmolochlogo from "../assets/anonvsmolochlogo.svg";
 
 // displays a page header
 
 export default function Header() {
   return (
-    <a href="https://github.com/moonshotcollective/anonvsmoloch-NFT" target="_blank" rel="noopener noreferrer">
-      <PageHeader title="Anon VS Moloch" subTitle="Anon VS Moloch NFT Store" style={{ cursor: "pointer" }} />
+    <a
+      href="https://github.com/moonshotcollective/anonvsmoloch-NFT"
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{ margin: 10, float: "left" }}
+    >
+      <Image width={200} src={anonvsmolochlogo} />
     </a>
   );
 }
