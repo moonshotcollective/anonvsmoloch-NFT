@@ -4,6 +4,7 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import "./index.css";
 
+// Update the subgraphUri with your subgraph uri.
 const subgraphUri = "http://localhost:8000/subgraphs/name/scaffold-eth/your-contract";
 
 const client = new ApolloClient({
@@ -13,7 +14,7 @@ const client = new ApolloClient({
 
 ReactDOM.render(
   <ApolloProvider client={client}>
-      <App subgraphUri={subgraphUri} />
+    <App subgraphUri={subgraphUri} />
   </ApolloProvider>,
   document.getElementById("root"),
 );

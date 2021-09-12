@@ -1,3 +1,4 @@
+/* eslint-disable no-await-in-loop */
 /* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/alt-text */
 import WalletConnectProvider from "@walletconnect/web3-provider";
@@ -8,10 +9,10 @@ import ReactJson from "react-json-view";
 import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
 import Web3Modal from "web3modal";
 import "./App.css";
-import { Account, Address, AddressInput, Contract, Faucet, GasGauge, Header, Ramp, ThemeSwitch } from "./components";
 import Portis from "@portis/web3";
 import Fortmatic from "fortmatic";
 import Authereum from "authereum";
+// import { Account, Address, AddressInput, Contract, Faucet, GasGauge, Header, Ramp } from "./components";
 import { INFURA_ID, NETWORK, NETWORKS } from "./constants";
 import { Transactor } from "./helpers";
 import {
@@ -466,26 +467,37 @@ function App(props) {
               <img className="image-4" src={image41x} />
               <div className="rectangle-923" />
             </div>
+            {/* Header Image */}
             <img className="group-33927" src={group339272x} />
+            {/* Menu */}
             <div className="menu-items spacemono-normal-green-sheen-16px">
               <img className="group-33970" src={group339702x} />
               <div className="top-navbar">Explore Editions</div>
               <div className="top-navbar">How It Works</div>
               <div className="top-navbar">About</div>
             </div>
-            <Menu mode="horizontal">
-              <Menu.Item key="mail">Navigation One</Menu.Item>
-              <Menu.Item key="app">Navigation Two</Menu.Item>
-              <Menu.Item key="alipay">
-                <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-                  Navigation Four - Link
-                </a>
-              </Menu.Item>
-              <Menu.Item key="store">
-                <a href="/store">Store</a>
-              </Menu.Item>
-            </Menu>
 
+            <BrowserRouter>
+              <Menu mode="horizontal">
+                <Menu.Item key="mail">Navigation One</Menu.Item>
+                <Menu.Item key="app">Navigation Two</Menu.Item>
+                <Menu.Item key="alipay">
+                  <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+                    Navigation Four - Link
+                  </a>
+                </Menu.Item>
+                <Menu.Item key="store">
+                  <a href="/store">Store</a>
+                </Menu.Item>
+              </Menu>
+              <Route path="/">
+
+              </Route>
+              <Route path="/store">
+                <Store />
+              </Route>
+            </BrowserRouter>
+   
             <div className="text-1-2">
               Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text
               .
@@ -736,8 +748,11 @@ function App(props) {
               </div>
             </div>
           </div> */}
+          
         </div>
       </div>
+     
+
     </body>
   );
 }

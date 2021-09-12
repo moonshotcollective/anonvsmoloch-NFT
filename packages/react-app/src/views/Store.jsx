@@ -9,6 +9,7 @@ let STARTING_JSON_NFT = {
   image: "",
   name: "",
   attributes: [
+    // I believe you can have 21 attr.
     {
       trait_type: "",
       value: "",
