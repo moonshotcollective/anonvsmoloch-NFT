@@ -93,13 +93,8 @@ top: 427px;
 /* screen - v2 */
 
 .v2 {
-  /* align-items: flex-start; */
-  background-color: var(--black);
-  /* display: flex;
-  flex-direction: column; */
-  /* height: 4594px; */
+  background-color: rgba(0, 0, 0, 0.65);
   overflow: hidden;
-  /* width: 1440px; */
 }
 
 .v2 .overlap-group8 {
@@ -118,10 +113,14 @@ top: 427px;
   width: 1558px;
 }
 
+.nav-view-slider {
+  width: 100vh;
+}
+
 .v2 .overlap-group8-nav {
   height: 100vh;
   margin-left: -59px;
-  margin-top: -5px;
+  margin-top: 0;
   position: relative;
   width: 1558px;
 }
@@ -148,10 +147,6 @@ top: 427px;
   object-fit: cover;
   position: absolute;
   top: 0;
-  /* margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0; */
   width: 100%;
 }
 
@@ -263,17 +258,6 @@ top: 427px;
   height: 26px;
   margin-top: -0.46px;
   width: 86px;
-
-  /* Group 33970 */
-
-  /* position: static;
-  left: 0%;
-  right: 84.65%;
-  top: 0%;
-  bottom: 10.42%; */
-
-
-  /* Inside Auto Layout */
   flex: none;
   order: 0;
   flex-grow: 0;
@@ -456,13 +440,6 @@ top: 427px;
 }
 
 .v2 .text-3 {
-  /* letter-spacing: 0;
-  line-height: 48px;
-  min-height: 96px;
-  width: 400px;
-
-  Gitcoin Comics -Edition #2 */
-
   position: absolute;
   width: 398px;
   height: 96px;

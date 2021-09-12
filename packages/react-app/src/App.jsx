@@ -1,9 +1,7 @@
 import WalletConnectProvider from "@walletconnect/web3-provider";
-import { Alert, Button, Card, Col, Input, List, Menu, Row, Image, PageHeader, Drawer } from "antd";
+import { Alert, Button, Col, Menu, Row, Image, PageHeader, Drawer } from "antd";
 import "antd/dist/antd.css";
-import React, { useCallback, useEffect, useState, Fragment } from "react";
-import ReactJson from "react-json-view";
-import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
+import React, { useCallback, useEffect, useState } from "react";
 import Web3Modal from "web3modal";
 import "./App.css";
 import Media from "react-media";
@@ -21,7 +19,6 @@ import {
 } from "./hooks";
 
 // These assets will be used. Code using this is commented out
-import gitcoinlogo from "./assets/gitcoinlogo.svg";
 import introbackground from "./assets/introbackground.svg";
 import anonvsmolochlogo from "./assets/anonvsmolochlogo.svg";
 import ethbotbegins from "./assets/ethbotbegins.svg";
@@ -459,8 +456,8 @@ function App(props) {
         <div className="v2 screen">
           <div className="overlap-group8">
             <div className="overlap-group-1">
-              <img className="v2 introBackgroundCover" src={rectangle9221x} />
-              <img className="v2 introBackground" src={introBackground} />
+              <img alt="background image cover nav" className="v2 introBackgroundCover" src={rectangle9221x} />
+              <img alt="background image nav" className="v2 introBackground" src={introBackground} />
               <div className="rectangle-923" />
             </div>
             <PageHeader
@@ -507,7 +504,7 @@ function App(props) {
                               width="100vh"
                               height="100vh"
                             >
-                              <div className="v2 screen">
+                              <div className="v2">
                                 <div className="overlap-group8-nav">
                                   <div className="overlap-group-1-nav">
                                     <img
@@ -527,9 +524,9 @@ function App(props) {
                                     <a onClick={onClose}>
                                       <Image className="menuIconSmall infront" src={burgerMenuIcon} />
                                     </a>
-                                    <div className="">
+                                    <div className="nav-view-slider">
                                       <Row gutter={16}>
-                                        <Col span={12} offset={6}>
+                                        <Col span={8} offset={4}>
                                           <Image
                                             className="infront-bottom nav-gitcoin-margin"
                                             src={group339702x}
@@ -539,21 +536,21 @@ function App(props) {
                                         </Col>
                                       </Row>
                                       <Row gutter={16}>
-                                        <Col span={12} offset={6}>
+                                        <Col span={8} offset={4}>
                                           <h1 className="top-navbar-text-style infront-bottom nav-text-margin">
                                             Explore Editions
                                           </h1>
                                         </Col>
                                       </Row>
                                       <Row gutter={16}>
-                                        <Col span={12} offset={6}>
+                                        <Col span={8} offset={4}>
                                           <h1 className="top-navbar-text-style infront-bottom nav-text-margin">
                                             How It Works
                                           </h1>
                                         </Col>
                                       </Row>
                                       <Row gutter={16}>
-                                        <Col span={12} offset={6}>
+                                        <Col span={8} offset={4}>
                                           <h1 className="top-navbar-text-style infront-bottom nav-text-margin">
                                             About
                                           </h1>
