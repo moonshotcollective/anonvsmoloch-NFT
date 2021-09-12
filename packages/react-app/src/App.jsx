@@ -1,12 +1,12 @@
 import WalletConnectProvider from "@walletconnect/web3-provider";
-import { Alert, Button, Card, Col, Input, List, Menu, Row, Image, PageHeader } from "antd";
+import { Alert, Button, Card, Col, Input, List, Menu, Row, Image, PageHeader, Drawer } from "antd";
 import "antd/dist/antd.css";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState, Fragment } from "react";
 import ReactJson from "react-json-view";
 import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
 import Web3Modal from "web3modal";
 import "./App.css";
-import { Account, Address, AddressInput, Contract, Faucet, GasGauge, Header, Ramp, ThemeSwitch, Navbar } from "./components";
+import Media from "react-media";
 import { INFURA_ID, NETWORK, NETWORKS } from "./constants";
 import { Transactor } from "./helpers";
 import {
@@ -26,7 +26,7 @@ import introbackground from "./assets/introbackground.svg";
 import anonvsmolochlogo from "./assets/anonvsmolochlogo.svg";
 import ethbotbegins from "./assets/ethbotbegins.svg";
 import rectangle9221x from "./assets/rectangle-922@1x.svg";
-import image41x from "./assets/image-4@1x.png";
+import introBackground from "./assets/intro-background.png";
 import group339272x from "./assets/group-33927@2x.svg";
 import group339702x from "./assets/group-33970@2x.svg";
 import vector12x from "./assets/vector-1@2x.svg";
@@ -52,12 +52,14 @@ import bot211x from "./assets/bot2-1@1x.png";
 import layer212x from "./assets/layer-2-1@2x.png";
 import group3392712x from "./assets/group-33927-1@2x.svg";
 import frame144361x from "./assets/frame-14436@1x.svg";
+import burgerMenuIcon from "./assets/burgerMenuIcon.svg";
 
 const { SubMenu } = Menu;
 
 const { BufferList } = require("bl");
 // https://www.npmjs.com/package/ipfs-http-client
 const ipfsAPI = require("ipfs-http-client");
+
 const ipfs = ipfsAPI({ host: "ipfs.infura.io", port: "5001", protocol: "https" });
 
 const { ethers } = require("ethers");
@@ -441,78 +443,171 @@ function App(props) {
 
   const [transferToAddresses, setTransferToAddresses] = useState({});
 
+  const [navVisible, setNavVisible] = useState(false);
+
+  const onClose = () => {
+    setNavVisible(false);
+  };
+  const showDrawer = () => {
+    setNavVisible(true);
+  };
+
   return (
-    <body style={{ margin: 0, background: '#000000'}}>
-    <input type="hidden" id="anPageName" name="page" value="v2" />
-    <div className="container-center-horizontal">
-      <div className="v2 screen">
-        <div className="overlap-group8">
-          <div className="overlap-group-1">
-            <img className="rectangle-922" src={rectangle9221x} />
-            <img className="image-4" src={image41x} />
-            <div className="rectangle-923"></div>
-          </div>
-          <PageHeader
+    <body style={{ margin: 0, background: "#000000" }}>
+      <input type="hidden" id="anPageName" name="page" value="v2" />
+      <div className="container-center-horizontal">
+        <div className="v2 screen">
+          <div className="overlap-group8">
+            <div className="overlap-group-1">
+              <img className="v2 introBackgroundCover" src={rectangle9221x} />
+              <img className="v2 introBackground" src={introBackground} />
+              <div className="rectangle-923" />
+            </div>
+            <PageHeader
               extra={[
-                <Image className="group-33927" src={group339272x} />,
-                <div className="menu-items spacemono-normal-green-sheen-16px">
-                  <Image className="group-33970" src={group339702x} />
-                  <div className="top-navbar">Explore Editions</div>
-                  <div className="top-navbar">How It Works</div>
-                  <div className="top-navbar">About</div>
+                <div key="navbar">
+                  <Media
+                    queries={{
+                      small: "(max-width: 699px)",
+                      medium: "(min-width: 700px) and (max-width: 1199px)",
+                      large: "(min-width: 1200px)",
+                    }}
+                  >
+                    {matches => (
+                      <>
+                        {matches.large || matches.medium ? (
+                          <div>
+                            <Image className="largeHeadLargeMedium" src={group339272x} />
+                            <Row className="menu-items spacemono-normal-green-sheen-16px" gutter={16}>
+                              <Col className="gutter-row" span={6}>
+                                <Image className="group-33970" src={group339702x} />
+                              </Col>
+                              <Col className="gutter-row" span={6}>
+                                <div className="top-navbar">Explore Editions</div>
+                              </Col>
+                              <Col className="gutter-row" span={6}>
+                                <div className="top-navbar">How It Works</div>
+                              </Col>
+                              <Col className="gutter-row" span={6}>
+                                <div className="top-navbar">About</div>
+                              </Col>
+                            </Row>
+                          </div>
+                        ) : (
+                          <div>
+                            <Image className="largeHeadSmall" src={group339272x} />
+                            <a onClick={showDrawer}>
+                              <Image className="menuIconSmall" src={burgerMenuIcon} />
+                            </a>
+                            <Drawer
+                              placement="bottom"
+                              closable
+                              onClose={onClose}
+                              visible={navVisible}
+                              width="100vh"
+                              height="100vh"
+                            >
+                              <div className="v2 screen">
+                                <div className="overlap-group8-nav">
+                                  <div className="overlap-group-1-nav">
+                                    <img
+                                      className="v2 introBackgroundCover-nav"
+                                      src={rectangle9221x}
+                                      alt="rectangle background"
+                                    />
+                                    <img
+                                      className="v2 introBackground-nav"
+                                      src={introBackground}
+                                      alt="intro background"
+                                    />
+                                    <div className="rectangle-923-nav" />
+                                  </div>
+                                  <div>
+                                    <Image className="largeHeadSmall infront" src={group339272x} />
+                                    <a onClick={onClose}>
+                                      <Image className="menuIconSmall infront" src={burgerMenuIcon} />
+                                    </a>
+                                    <div className="">
+                                      <Row gutter={16}>
+                                        <Col span={12} offset={6}>
+                                          <Image
+                                            className="infront-bottom nav-gitcoin-margin"
+                                            src={group339702x}
+                                            width={150}
+                                            height={100}
+                                          />
+                                        </Col>
+                                      </Row>
+                                      <Row gutter={16}>
+                                        <Col span={12} offset={6}>
+                                          <h1 className="top-navbar-text-style infront-bottom nav-text-margin">
+                                            Explore Editions
+                                          </h1>
+                                        </Col>
+                                      </Row>
+                                      <Row gutter={16}>
+                                        <Col span={12} offset={6}>
+                                          <h1 className="top-navbar-text-style infront-bottom nav-text-margin">
+                                            How It Works
+                                          </h1>
+                                        </Col>
+                                      </Row>
+                                      <Row gutter={16}>
+                                        <Col span={12} offset={6}>
+                                          <h1 className="top-navbar-text-style infront-bottom nav-text-margin">
+                                            About
+                                          </h1>
+                                        </Col>
+                                      </Row>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </Drawer>
+                          </div>
+                        )}
+                      </>
+                    )}
+                  </Media>
                 </div>,
               ]}
-          />
-          <Image className="group-33927" src={group339272x} />
-          <div className="menu-items spacemono-normal-green-sheen-16px">
-            <Image className="group-33970" src={group339702x} />
-            <div className="top-navbar">Explore Editions</div>
-            <div className="top-navbar">How It Works</div>
-            <div className="top-navbar">About</div>
-          </div>
+            />
+            {/* <Image className="group-33927" src={group339272x} />
+            <div className="menu-items spacemono-normal-green-sheen-16px">
+              <Image className="group-33970" src={group339702x} />
+              <div className="top-navbar">Explore Editions</div>
+              <div className="top-navbar">How It Works</div>
+              <div className="top-navbar">About</div>
+            </div> */}
 
-          {/* <Navbar /> */}
+            {/* <Navbar /> */}
 
-          <Menu mode="horizontal" >
-            <Menu.Item key="mail">
-              Navigation One
-            </Menu.Item>
-            <Menu.Item key="app" >
-              Navigation Two
-            </Menu.Item>
-            <Menu.Item key="alipay">
-              <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-                Navigation Four - Link
-              </a>
-            </Menu.Item>
-          </Menu>
+            <div className="text-1-2">
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text
+              .
+            </div>
+            <div className="x16d-10h-16m spacemono-normal-green-sheen-32px">16d 10h 16m</div>
+            <Button className="twitter-follow-btn">
+              <img className="vector" src={vector12x} />
+              <div className="follow">Follow</div>
+            </Button>
+            <div className="rectangle-1288" />
+            <div className="group-33929">
+              <h1 className="text-4">The Greatest Larp has Begun</h1>
 
-          <div className="text-1-2">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text .
-          </div>
-          <div className="x16d-10h-16m spacemono-normal-green-sheen-32px">16d 10h 16m</div>
-          <Button className="twitter-follow-btn">
-            <img className="vector" src={vector12x} />
-            <div className="follow">Follow</div>
-          </Button>
-          <div className="rectangle-1288"></div>
-          <div className="group-33929">
-            <h1 className="text-4">The Greatest Larp has Begun</h1>
-
-
-            {/* Statue Text */}
-            {/* <div className="group-33937">
+              {/* Statue Text */}
+              {/* <div className="group-33937">
               <div className="text-3 spacemono-normal-green-sheen-32px">Gitcoin Comics -Edition #2</div>
               <div className="text-2-1">
                 Lorem Ipsum is simply dummy text of the printing and typesetting .Lorem Ipsum is simply dummy text.
               </div>
             </div> */}
-          </div>
+            </div>
 
-          <img className="group-33928" src={group339281x} />
+            <img className="group-33928" src={group339281x} />
 
-          {/* Statues */}
-          {/* 
+            {/* Statues */}
+            {/* 
           <div className="group-33952">
             <div className="group-33949">
               <div className="group-33964">
@@ -542,11 +637,11 @@ function App(props) {
             <img className="group-33948-1" src={group339482x} />
           </div>
           <img className="vector-1" src={vector2x} /> */}
-        </div>
+          </div>
 
-        {/* First banner */}
+          {/* First banner */}
 
-        {/* <div className="frame-14435">
+          {/* <div className="frame-14435">
           <img className="group-33932" src={group339321x} />
           <div className="text-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry</div>
           <div className="btn-2 border-1px-jungle-green">
@@ -555,14 +650,12 @@ function App(props) {
           </div>
         </div> */}
 
+          {/* Overlapping Div includes NFTs for sale, mentions bar and bottom banner */}
 
-        {/* Overlapping Div includes NFTs for sale, mentions bar and bottom banner */}
+          <div className="overlap-group9">
+            {/* NFT for sale bar */}
 
-        <div className="overlap-group9">
-
-          {/* NFT for sale bar */}
-
-          {/* <div className="overlap-group2">
+            {/* <div className="overlap-group2">
             <img className="bg" src={bg1x} />
             <div className="rectangle-1328"></div>
             <div className="text-7">(75% proceeds go to Gitcoin Grants, 25=&gt; Artist)</div>
@@ -594,9 +687,9 @@ function App(props) {
             <div className="new">NEW</div>
           </div> */}
 
-          {/* Mentions Bar */}
+            {/* Mentions Bar */}
 
-          {/* <div className="group-33969">
+            {/* <div className="group-33969">
             <div className="overlap-group5">
               <div className="overlap-group4">
                 <div className="group-33931">
@@ -660,10 +753,9 @@ function App(props) {
             </div>
           </div> */}
 
+            {/* Bottom Banner */}
 
-          {/* Bottom Banner */}
-
-          {/* <div className="frame-14437">
+            {/* <div className="frame-14437">
             <div className="overlap-group6">
               <div className="rectangle-1324"></div>
               <img className="star-1" src={star11x} />
@@ -679,13 +771,13 @@ function App(props) {
             </div>
           </div> */}
 
-          {/* large bottom figure above banner */}
-          {/* <img className="layer-2-1" src={layer212x} /> */}
-        </div>
+            {/* large bottom figure above banner */}
+            {/* <img className="layer-2-1" src={layer212x} /> */}
+          </div>
 
-        {/* FAQ Component */}
+          {/* FAQ Component */}
 
-        {/* <div className="faq">
+          {/* <div className="faq">
           <div className="overlap-group7">
             <div className="faqs spacemono-normal-emerald-32px">FAQ’S !?</div>
             <div className="group-33939">
@@ -722,8 +814,8 @@ function App(props) {
           </div>
         </div> */}
 
-        {/* FOOTER */}
-        {/* <div className="group-33962">
+          {/* FOOTER */}
+          {/* <div className="group-33962">
           <img className="group-33927-1" src={group3392712x} />
           <div className="frame-14437-1">
             <img className="frame-14436" src={frame144361x} />
@@ -742,9 +834,9 @@ function App(props) {
             </div>
           </div>
         </div> */}
+        </div>
       </div>
-    </div>
-  </body>
+    </body>
   );
 }
 
