@@ -6,7 +6,7 @@ import ReactJson from "react-json-view";
 import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
 import Web3Modal from "web3modal";
 import "./App.css";
-import { Account, Address, AddressInput, Contract, Faucet, GasGauge, Header, Ramp, ThemeSwitch } from "./components";
+import { Faq } from "./components";
 import { INFURA_ID, NETWORK, NETWORKS } from "./constants";
 import { Transactor } from "./helpers";
 import {
@@ -58,6 +58,7 @@ const { SubMenu } = Menu;
 const { BufferList } = require("bl");
 // https://www.npmjs.com/package/ipfs-http-client
 const ipfsAPI = require("ipfs-http-client");
+
 const ipfs = ipfsAPI({ host: "ipfs.infura.io", port: "5001", protocol: "https" });
 
 const { ethers } = require("ethers");
@@ -442,64 +443,60 @@ function App(props) {
   const [transferToAddresses, setTransferToAddresses] = useState({});
 
   return (
-    <body style={{ margin: 0, background: '#000000'}}>
-    <input type="hidden" id="anPageName" name="page" value="v2" />
-    <div className="container-center-horizontal">
-      <div className="v2 screen">
-        <div className="overlap-group8">
-          <div className="overlap-group-1">
-            <img className="rectangle-922" src={rectangle9221x} />
-            <img className="image-4" src={image41x} />
-            <div className="rectangle-923"></div>
-          </div>
-          <img className="group-33927" src={group339272x} />
-          <div className="menu-items spacemono-normal-green-sheen-16px">
-            <img className="group-33970" src={group339702x} />
-            <div className="top-navbar">Explore Editions</div>
-            <div className="top-navbar">How It Works</div>
-            <div className="top-navbar">About</div>
-          </div>
+    <body style={{ margin: 0, background: "#000000" }}>
+      <input type="hidden" id="anPageName" name="page" value="v2" />
+      <div className="container-center-horizontal">
+        <div className="v2 screen">
+          <div className="overlap-group8">
+            <div className="overlap-group-1">
+              <img className="rectangle-922" src={rectangle9221x} />
+              <img className="image-4" src={image41x} />
+              <div className="rectangle-923" />
+            </div>
+            <img className="group-33927" src={group339272x} />
+            <div className="menu-items spacemono-normal-green-sheen-16px">
+              <img className="group-33970" src={group339702x} />
+              <div className="top-navbar">Explore Editions</div>
+              <div className="top-navbar">How It Works</div>
+              <div className="top-navbar">About</div>
+            </div>
 
-          <Menu mode="horizontal" >
-            <Menu.Item key="mail">
-              Navigation One
-            </Menu.Item>
-            <Menu.Item key="app" >
-              Navigation Two
-            </Menu.Item>
-            <Menu.Item key="alipay">
-              <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-                Navigation Four - Link
-              </a>
-            </Menu.Item>
-          </Menu>
+            <Menu mode="horizontal">
+              <Menu.Item key="mail">Navigation One</Menu.Item>
+              <Menu.Item key="app">Navigation Two</Menu.Item>
+              <Menu.Item key="alipay">
+                <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+                  Navigation Four - Link
+                </a>
+              </Menu.Item>
+            </Menu>
 
-          <div className="text-1-2">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text .
-          </div>
-          <div className="x16d-10h-16m spacemono-normal-green-sheen-32px">16d 10h 16m</div>
-          <Button className="twitter-follow-btn">
-            <img className="vector" src={vector12x} />
-            <div className="follow">Follow</div>
-          </Button>
-          <div className="rectangle-1288"></div>
-          <div className="group-33929">
-            <h1 className="text-4">The Greatest Larp has Begun</h1>
+            <div className="text-1-2">
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text
+              .
+            </div>
+            <div className="x16d-10h-16m spacemono-normal-green-sheen-32px">16d 10h 16m</div>
+            <Button className="twitter-follow-btn">
+              <img className="vector" src={vector12x} />
+              <div className="follow">Follow</div>
+            </Button>
+            <div className="rectangle-1288" />
+            <div className="group-33929">
+              <h1 className="text-4">The Greatest Larp has Begun</h1>
 
-
-            {/* Statue Text */}
-            {/* <div className="group-33937">
+              {/* Statue Text */}
+              {/* <div className="group-33937">
               <div className="text-3 spacemono-normal-green-sheen-32px">Gitcoin Comics -Edition #2</div>
               <div className="text-2-1">
                 Lorem Ipsum is simply dummy text of the printing and typesetting .Lorem Ipsum is simply dummy text.
               </div>
             </div> */}
-          </div>
+            </div>
 
-          <img className="group-33928" src={group339281x} />
+            <img className="group-33928" src={group339281x} />
 
-          {/* Statues */}
-          {/* 
+            {/* Statues */}
+            {/* 
           <div className="group-33952">
             <div className="group-33949">
               <div className="group-33964">
@@ -529,11 +526,11 @@ function App(props) {
             <img className="group-33948-1" src={group339482x} />
           </div>
           <img className="vector-1" src={vector2x} /> */}
-        </div>
+          </div>
 
-        {/* First banner */}
+          {/* First banner */}
 
-        {/* <div className="frame-14435">
+          {/* <div className="frame-14435">
           <img className="group-33932" src={group339321x} />
           <div className="text-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry</div>
           <div className="btn-2 border-1px-jungle-green">
@@ -542,14 +539,12 @@ function App(props) {
           </div>
         </div> */}
 
+          {/* Overlapping Div includes NFTs for sale, mentions bar and bottom banner */}
 
-        {/* Overlapping Div includes NFTs for sale, mentions bar and bottom banner */}
+          <div className="overlap-group9">
+            {/* NFT for sale bar */}
 
-        <div className="overlap-group9">
-
-          {/* NFT for sale bar */}
-
-          {/* <div className="overlap-group2">
+            {/* <div className="overlap-group2">
             <img className="bg" src={bg1x} />
             <div className="rectangle-1328"></div>
             <div className="text-7">(75% proceeds go to Gitcoin Grants, 25=&gt; Artist)</div>
@@ -581,9 +576,9 @@ function App(props) {
             <div className="new">NEW</div>
           </div> */}
 
-          {/* Mentions Bar */}
+            {/* Mentions Bar */}
 
-          {/* <div className="group-33969">
+            {/* <div className="group-33969">
             <div className="overlap-group5">
               <div className="overlap-group4">
                 <div className="group-33931">
@@ -647,10 +642,9 @@ function App(props) {
             </div>
           </div> */}
 
+            {/* Bottom Banner */}
 
-          {/* Bottom Banner */}
-
-          {/* <div className="frame-14437">
+            {/* <div className="frame-14437">
             <div className="overlap-group6">
               <div className="rectangle-1324"></div>
               <img className="star-1" src={star11x} />
@@ -666,51 +660,23 @@ function App(props) {
             </div>
           </div> */}
 
-          {/* large bottom figure above banner */}
-          {/* <img className="layer-2-1" src={layer212x} /> */}
-        </div>
-
-        {/* FAQ Component */}
-
-        {/* <div className="faq">
-          <div className="overlap-group7">
-            <div className="faqs spacemono-normal-emerald-32px">FAQ’S !?</div>
-            <div className="group-33939">
-              <div className="overlap-group-7">
-                <div className="background border-1px-jungle-green"></div>
-                <div className="address spacemono-normal-green-sheen-24px">#1 What is Lorem Ipsum?</div>
-                <div className="text-2 spacemono-normal-green-sheen-42px">&gt;</div>
-              </div>
-              <div className="overlap-group1-2">
-                <div className="background border-1px-jungle-green"></div>
-                <div className="background-3 border-1px-jungle-green"></div>
-                <div className="address-1">#2 What is Lorem Ipsum?</div>
-                <p className="text-21 librefranklin-normal-bon-jour-16px">
-                  Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum has been
-                  survived not only five centuries, but also the leap into electronic typesetting, remaining essentially
-                  unchanged.
-                </p>
-                <div className="text-22">&gt;</div>
-              </div>
-              <div className="overlap-group2-1">
-                <div className="background border-1px-jungle-green"></div>
-                <div className="background border-1px-jungle-green"></div>
-                <div className="address-2 spacemono-normal-green-sheen-24px">#2 What is Lorem Ipsum?</div>
-                <div className="text-2 spacemono-normal-green-sheen-42px">&gt;</div>
-              </div>
-              <div className="overlap-group3-1">
-                <div className="background border-1px-jungle-green"></div>
-                <div className="background border-1px-jungle-green"></div>
-                <div className="address spacemono-normal-green-sheen-24px">#2 What is Lorem Ipsum?</div>
-                <div className="text-2 spacemono-normal-green-sheen-42px">&gt;</div>
-              </div>
-            </div>
+            {/* large bottom figure above banner */}
+            {/* <img className="layer-2-1" src={layer212x} /> */}
           </div>
-        </div> */}
 
-        {/* FOOTER */}
-        {/* <div className="group-33962">
+          {/* FAQ Component */}
+          <Faq
+            sectionTitle="FAQ’S !?"
+            faqs={[
+              { title: "What is Lorem Ipsum?", description: "Lorem Ipsum has been the industry" },
+              { title: "What is Lorem Ipsum?", description: "Lorem Ipsum has been the industry" },
+              { title: "What is Lorem Ipsum?", description: "Lorem Ipsum has been the industry" },
+              { title: "What is Lorem Ipsum?", description: "Lorem Ipsum has been the industry" },
+            ]}
+          />
+
+          {/* FOOTER */}
+          {/* <div className="group-33962">
           <img className="group-33927-1" src={group3392712x} />
           <div className="frame-14437-1">
             <img className="frame-14436" src={frame144361x} />
@@ -729,9 +695,9 @@ function App(props) {
             </div>
           </div>
         </div> */}
+        </div>
       </div>
-    </div>
-  </body>
+    </body>
   );
 }
 

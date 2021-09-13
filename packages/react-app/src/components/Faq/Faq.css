@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css?family=Space+Mono:400,700|Libre+Franklin:400,600|Miriam+Libre:400");
+
+  .faq-title {
+	font-family: 'Space Mono';
+	font-style: normal;
+	font-weight: normal;
+	font-size: 50px;
+	line-height: 175%;
+	color: #11BC92;
+	text-align: center;
+	text-transform: uppercase;
+	align-items: center;
+	text-align: center!;
+  }
+
+.faq {
+	align-items: center;
+	display: flex;
+	height: 734px;
+	min-width: 1442px;
+	text-align: center!;
+}
+
+.overlap-group7 {
+	align-items: flex-start;
+	background-color: #6dc5a040;
+	display: flex;
+	flex-direction: column;
+	min-height: 734px;
+	padding: 59px 160px;
+	width: 1440px;
+  }
+
+  .overlap-group-7 {
+	height: 63px;
+	margin-top: -2px;
+	position: relative;
+	width: 1112px;
+  }
+
+  .faqs {
+	letter-spacing: 0;
+	line-height: 48px;
+	min-height: 60px;
+	width: 667px;
+  }
+
+  .group-33939 {
+	align-items: center;
+	align-self: center;
+	display: flex;
+	flex-direction: column;
+	margin-right: 2.0px;
+	margin-top: 33px;
+	min-height: 467px;
+	width: 1112px;
+	color: white;
+  }
+
+  .text-2 {
+	left: 1048px;
+	letter-spacing: 0;
+	line-height: 63px;
+	position: absolute;
+	top: 0;
+	white-space: nowrap;
+	width: 38px;
+  }
+
+  .overlap-group1-2 {
+	height: 190px;
+	margin-top: 38px;
+	position: relative;
+	width: 1112px;
+  }
+
+  .overlap-group2-1 {
+	height: 63px;
+	margin-top: 16px;
+	position: relative;
+	width: 1112px;
+  }
+
+  .overlap-group3-1 {
+	height: 63px;
+	margin-top: 38px;
+	position: relative;
+	width: 1112px;
+  }
+
+  .ant-collapse-item {
+	margin-top: 10px;
+	background-color: #337062;
+	border: 0.593148px solid #2CAE92;
+	box-sizing: border-box;
+	border-radius: 2.37259px;
+  }
+
+  .ant-collapse-content-box {
+	background-color: #337062;
+	color: white;
+  }
+
+  .ant-collapse {
+	  background-color: rgba(24, 43, 36);
+	  border: 0;
+  }
+
+  .ant-collapse-content {
+	background-color: #6dc5a040;
+	font-family: 'Space Mono';
+	font-style: normal;
+	font-weight: normal;
+	border: 0;
+  }
+
+  .faq-panel-white {
+	font-family: 'Space Mono';
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: white!;
+  }
+
+  .faq-panel-emrald {
+	font-family: 'Space Mono';
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: #6DC5A0!;
+  }
+
+  .ant-collapse-header {
+	color: #11BC92;
+  }
+
+  .ant-collapse-extra {
+	  margin-left: 20px;
+  }
+ 
