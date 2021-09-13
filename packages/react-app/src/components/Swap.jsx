@@ -120,7 +120,7 @@ function Swap({ selectedProvider, tokenListURI }) {
       }
     };
     getTokenList();
-  }, [tokenListURI]);
+  }, [tokenListURI, activeChainId]);
 
   const getTrades = async () => {
     if (tokenIn && tokenOut && (amountIn || amountOut)) {
@@ -181,7 +181,7 @@ function Swap({ selectedProvider, tokenListURI }) {
 
   useEffect(() => {
     getTrades();
-  }, [tokenIn, tokenOut, debouncedAmountIn, debouncedAmountOut, slippageTolerance, selectedProvider]);
+  }, [tokenIn, tokenOut, debouncedAmountIn, debouncedAmountOut, slippageTolerance, selectedProvider, getTrades]);
 
   useEffect(() => {
     if (trades && trades[0]) {
@@ -191,7 +191,7 @@ function Swap({ selectedProvider, tokenListURI }) {
         setAmountInMax(trades[0].maximumAmountIn(slippageTolerance));
       }
     }
-  }, [slippageTolerance, amountIn, amountOut, trades]);
+  }, [slippageTolerance, amountIn, amountOut, trades, exact]);
 
   const getBalance = async (_token, _account, _contract) => {
     let newBalance;
