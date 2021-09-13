@@ -9,10 +9,7 @@ import ReactJson from "react-json-view";
 import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
 import Web3Modal from "web3modal";
 import "./App.css";
-import Portis from "@portis/web3";
-import Fortmatic from "fortmatic";
-import Authereum from "authereum";
-// import { Account, Address, AddressInput, Contract, Faucet, GasGauge, Header, Ramp } from "./components";
+import { Account, Address, AddressInput, Contract, Faucet, GasGauge, Header, Ramp, ThemeSwitch } from "./components";
 import { INFURA_ID, NETWORK, NETWORKS } from "./constants";
 import { Transactor } from "./helpers";
 import {
@@ -25,7 +22,6 @@ import {
   useOnBlock,
   useUserSigner,
 } from "./hooks";
-import { Subgraph, Store } from "./views";
 
 // These assets will be used. Code using this is commented out
 import gitcoinlogo from "./assets/gitcoinlogo.svg";
@@ -457,62 +453,53 @@ function App(props) {
   const [transferToAddresses, setTransferToAddresses] = useState({});
 
   return (
-    <body style={{ margin: 0, background: "#000000" }}>
-      <input type="hidden" id="anPageName" name="page" value="v2" />
-      <div className="container-center-horizontal">
-        <div className="v2 screen">
-          <div className="overlap-group8">
-            <div className="overlap-group-1">
-              <img className="rectangle-922" src={rectangle9221x} />
-              <img className="image-4" src={image41x} />
-              <div className="rectangle-923" />
-            </div>
-            {/* Header Image */}
-            <img className="group-33927" src={group339272x} />
-            {/* Menu */}
-            <div className="menu-items spacemono-normal-green-sheen-16px">
-              <img className="group-33970" src={group339702x} />
-              <div className="top-navbar">Explore Editions</div>
-              <div className="top-navbar">How It Works</div>
-              <div className="top-navbar">About</div>
-            </div>
+    <body style={{ margin: 0, background: '#000000'}}>
+    <input type="hidden" id="anPageName" name="page" value="v2" />
+    <div className="container-center-horizontal">
+      <div className="v2 screen">
+        <div className="overlap-group8">
+          <div className="overlap-group-1">
+            <img className="rectangle-922" src={rectangle9221x} />
+            <img className="image-4" src={image41x} />
+            <div className="rectangle-923"></div>
+          </div>
+          <img className="group-33927" src={group339272x} />
+          <div className="menu-items spacemono-normal-green-sheen-16px">
+            <img className="group-33970" src={group339702x} />
+            <div className="top-navbar">Explore Editions</div>
+            <div className="top-navbar">How It Works</div>
+            <div className="top-navbar">About</div>
+          </div>
 
-            <BrowserRouter>
-              <Menu mode="horizontal">
-                <Menu.Item key="mail">Navigation One</Menu.Item>
-                <Menu.Item key="app">Navigation Two</Menu.Item>
-                <Menu.Item key="alipay">
-                  <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-                    Navigation Four - Link
-                  </a>
-                </Menu.Item>
-                <Menu.Item key="store">
-                  <a href="/store">Store</a>
-                </Menu.Item>
-              </Menu>
-              <Route path="/">
+          <Menu mode="horizontal" >
+            <Menu.Item key="mail">
+              Navigation One
+            </Menu.Item>
+            <Menu.Item key="app" >
+              Navigation Two
+            </Menu.Item>
+            <Menu.Item key="alipay">
+              <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+                Navigation Four - Link
+              </a>
+            </Menu.Item>
+          </Menu>
 
-              </Route>
-              <Route path="/store">
-                <Store />
-              </Route>
-            </BrowserRouter>
-   
-            <div className="text-1-2">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text
-              .
-            </div>
-            <div className="x16d-10h-16m spacemono-normal-green-sheen-32px">16d 10h 16m</div>
-            <Button className="twitter-follow-btn">
-              <img className="vector" src={vector12x} />
-              <div className="follow">Follow</div>
-            </Button>
-            <div className="rectangle-1288" />
-            <div className="group-33929">
-              <h1 className="text-4">The Greatest Larp has Begun</h1>
+          <div className="text-1-2">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text .
+          </div>
+          <div className="x16d-10h-16m spacemono-normal-green-sheen-32px">16d 10h 16m</div>
+          <Button className="twitter-follow-btn">
+            <img className="vector" src={vector12x} />
+            <div className="follow">Follow</div>
+          </Button>
+          <div className="rectangle-1288"></div>
+          <div className="group-33929">
+            <h1 className="text-4">The Greatest Larp has Begun</h1>
 
-              {/* Statue Text */}
-              {/* <div className="group-33937">
+
+            {/* Statue Text */}
+            {/* <div className="group-33937">
               <div className="text-3 spacemono-normal-green-sheen-32px">Gitcoin Comics -Edition #2</div>
               <div className="text-2-1">
                 Lorem Ipsum is simply dummy text of the printing and typesetting .Lorem Ipsum is simply dummy text.
