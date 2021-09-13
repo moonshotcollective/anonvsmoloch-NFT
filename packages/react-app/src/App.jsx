@@ -1,3 +1,6 @@
+/* eslint-disable no-await-in-loop */
+/* eslint-disable no-unused-vars */
+/* eslint-disable jsx-a11y/alt-text */
 import WalletConnectProvider from "@walletconnect/web3-provider";
 import { Alert, Button, Col, Menu, Row, Image, PageHeader, Drawer } from "antd";
 import "antd/dist/antd.css";
@@ -256,7 +259,7 @@ function App(props) {
       setYourCollectibles(collectibleUpdate);
     };
     updateYourCollectibles();
-  }, [address, yourBalance]);
+  }, [address, yourBalance, balance, readContracts, localChainId]);
 
   /*
 	const addressFromENS = useResolveName(mainnetProvider, "austingriffith.eth");
@@ -299,6 +302,8 @@ function App(props) {
     readContracts,
     writeContracts,
     mainnetContracts,
+    localChainId,
+    myMainnetDAIBalance,
   ]);
 
   let networkDisplay = "";
@@ -408,7 +413,7 @@ function App(props) {
     !faucetClicked &&
     localProvider &&
     localProvider._network &&
-    localProvider._network.chainId == 31337 &&
+    localProvider._network.chainId === 31337 &&
     yourLocalBalance &&
     ethers.utils.formatEther(yourLocalBalance) <= 0
   ) {
@@ -424,7 +429,13 @@ function App(props) {
             setFaucetClicked(true);
           }}
         >
-          💰 Grab funds from the faucet ⛽️
+          <span role="img" aria-label="money-bag">
+            💰
+          </span>{" "}
+          Grab funds from the faucet{" "}
+          <span role="img" aria-label="gas-pump">
+            ⛽️
+          </span>
         </Button>
       </div>
     );
@@ -605,53 +616,51 @@ function App(props) {
 
             {/* Statues */}
             {/* 
-          <div className="group-33952">
-            <div className="group-33949">
-              <div className="group-33964">
-                <div className="group-33959">
-                  <div className="overlap-group-2">
-                    <img className="ellipse-14" src={ellipse142x} />
-                    <img className="layer-2er-1" src={layer2er12x} />
+            <div className="group-33952">
+              <div className="group-33949">
+                <div className="group-33964">
+                  <div className="group-33959">
+                    <div className="overlap-group-2">
+                      <img className="ellipse-14" src={ellipse142x} />
+                      <img className="layer-2er-1" src={layer2er12x} />
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="overlap-group1">
-                <div className="group-33948">
-                  <div className="eth-bot-statue">ETHBot Statue</div>
-                  <div className="btn-1 border-1px-jungle-green">
-                    <div className="x-eth">0.01 ETH</div>
+                <div className="overlap-group1">
+                  <div className="group-33948">
+                    <div className="eth-bot-statue">ETHBot Statue</div>
+                    <div className="btn-1 border-1px-jungle-green">
+                      <div className="x-eth">0.01 ETH</div>
+                    </div>
+                    <div className="text-6">
+                      <span className="span0">Only 300 Available<br /></span>
+                      <span className="span librefranklin-normal-bon-jour-22px">(</span>
+                      <span className="span2">Next one will cost 2ETH</span>
+                      <span className="span librefranklin-normal-bon-jour-22px">)</span>
+                    </div>
                   </div>
-                  <div className="text-6">
-                    <span className="span0">Only 300 Available<br /></span>
-                    <span className="span librefranklin-normal-bon-jour-22px">(</span>
-                    <span className="span2">Next one will cost 2ETH</span>
-                    <span className="span librefranklin-normal-bon-jour-22px">)</span>
-                  </div>
+                  <img className="fasfa-info-circle" src={fasfainfocircle2x} />
                 </div>
-                <img className="fasfa-info-circle" src={fasfainfocircle2x} />
               </div>
+              <img className="group-33948-1" src={group339482x} />
             </div>
-            <img className="group-33948-1" src={group339482x} />
-          </div>
-          <img className="vector-1" src={vector2x} /> */}
+            <img className="vector-1" src={vector2x} /> */}
           </div>
 
           {/* First banner */}
 
           {/* <div className="frame-14435">
-          <img className="group-33932" src={group339321x} />
-          <div className="text-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry</div>
-          <div className="btn-2 border-1px-jungle-green">
-            <img className="vector" src={vector12x} />
-            <div className="follow">Follow</div>
-          </div>
-        </div> */}
+            <img className="group-33932" src={group339321x} />
+            <div className="text-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry</div>
+            <div className="btn-2 border-1px-jungle-green">
+              <img className="vector" src={vector12x} />
+              <div className="follow">Follow</div>
+            </div>
+          </div> */}
 
           {/* Overlapping Div includes NFTs for sale, mentions bar and bottom banner */}
-
           <div className="overlap-group9">
             {/* NFT for sale bar */}
-
             {/* <div className="overlap-group2">
             <img className="bg" src={bg1x} />
             <div className="rectangle-1328"></div>
@@ -813,26 +822,29 @@ function App(props) {
 
           {/* FOOTER */}
           {/* <div className="group-33962">
-          <img className="group-33927-1" src={group3392712x} />
-          <div className="frame-14437-1">
-            <img className="frame-14436" src={frame144361x} />
-            <div className="text-19">
-              <span className="librefranklin-normal-bon-jour-20px">Powered by </span
-              ><span className="span-2 librefranklin-semi-bold-emerald-20px">Gitcoin</span
-              ><span className="librefranklin-normal-ice-cold-20px"> | Direct by</span
-              ><span className="librefranklin-normal-bon-jour-20px">&nbsp;</span
-              ><span className="span-2 librefranklin-semi-bold-emerald-20px">Devils Due</span
-              ><span className="librefranklin-normal-ice-cold-20px"> | Illustrated by</span
-              ><span className="librefranklin-normal-bon-jour-20px">&nbsp;</span
-              ><span className="span-2 librefranklin-semi-bold-emerald-20px">Josh Blaylock</span
-              ><span className="span8">&nbsp;</span><span className="librefranklin-normal-ice-cold-20px"> | Produced by</span
-              ><span className="librefranklin-normal-bon-jour-20px">&nbsp;</span
-              ><span className="librefranklin-semi-bold-emerald-20px">Devils Due </span><span className="span12"></span>
+            <img className="group-33927-1" src={group3392712x} />
+            <div className="frame-14437-1">
+              <img className="frame-14436" src={frame144361x} />
+              <div className="text-19">
+                <span className="librefranklin-normal-bon-jour-20px">Powered by </span
+                ><span className="span-2 librefranklin-semi-bold-emerald-20px">Gitcoin</span
+                ><span className="librefranklin-normal-ice-cold-20px"> | Direct by</span
+                ><span className="librefranklin-normal-bon-jour-20px">&nbsp;</span
+                ><span className="span-2 librefranklin-semi-bold-emerald-20px">Devils Due</span
+                ><span className="librefranklin-normal-ice-cold-20px"> | Illustrated by</span
+                ><span className="librefranklin-normal-bon-jour-20px">&nbsp;</span
+                ><span className="span-2 librefranklin-semi-bold-emerald-20px">Josh Blaylock</span
+                ><span className="span8">&nbsp;</span><span className="librefranklin-normal-ice-cold-20px"> | Produced by</span
+                ><span className="librefranklin-normal-bon-jour-20px">&nbsp;</span
+                ><span className="librefranklin-semi-bold-emerald-20px">Devils Due </span><span className="span12"></span>
+              </div>
             </div>
-          </div>
-        </div> */}
+          </div> */}
+          
         </div>
       </div>
+     
+
     </body>
   );
 }

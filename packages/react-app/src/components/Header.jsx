@@ -1,4 +1,4 @@
-import { PageHeader, Image } from "antd";
+import { Image } from "antd";
 import React from "react";
 import anonvsmolochlogo from "../assets/anonvsmolochlogo.svg";
 

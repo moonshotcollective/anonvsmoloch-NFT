@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const { ethers } = require("ethers");
 
@@ -28,6 +28,8 @@ export default function useBurnerSigner(provider) {
       setValue(storedKey);
     }
   }, []);
+
+  // const _wallet = useRef(new ethers.Wallet(storedValue));
 
   useEffect(() => {
     if (storedValue && provider) {
