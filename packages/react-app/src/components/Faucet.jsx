@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 import { SendOutlined } from "@ant-design/icons";
 import { Button, Input, Tooltip } from "antd";
 import { useLookupAddress } from "eth-hooks";
@@ -76,7 +77,7 @@ export default function Faucet(props) {
         setAddress(address);
       }
     },
-    [props.ensProvider, props.onChange],
+    [props.ensProvider],
   );
 
   const tx = Transactor(props.localProvider);
@@ -99,7 +100,7 @@ export default function Faucet(props) {
               onClick={() => {
                 tx({
                   to: address,
-                  value: utils.parseEther("0.01"),
+                  value: utils.parseEther("1.0"), // updated to 1 ETH JR
                 });
                 setAddress("");
               }}

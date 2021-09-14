@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 import { useEffect, useRef } from "react";
 
 // helper hook to call a function regularly in time intervals
@@ -29,5 +30,5 @@ export default function useOnBlock(provider, fn, args) {
         provider.off("block", listener);
       };
     }
-  }, [provider]);
+  }, [provider, args, fn]);
 }

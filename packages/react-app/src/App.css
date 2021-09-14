@@ -93,13 +93,8 @@ top: 427px;
 /* screen - v2 */
 
 .v2 {
-  align-items: flex-start;
-  background-color: var(--black);
-  display: flex;
-  flex-direction: column;
-  height: 4594px;
+  background-color: rgba(0, 0, 0, 0.65);
   overflow: hidden;
-  width: 1440px;
 }
 
 .v2 .overlap-group8 {
@@ -118,21 +113,63 @@ top: 427px;
   width: 1558px;
 }
 
-.v2 .rectangle-922 {
-  height: 889px;
-  left: 59px;
-  position: absolute;
-  top: 1px;
-  width: 1440px;
+.nav-view-slider {
+  width: 100vh;
 }
 
-.v2 .image-4 {
-  height: 890px;
+.v2 .overlap-group8-nav {
+  height: 100vh;
+  margin-left: -59px;
+  margin-top: 0;
+  position: relative;
+  width: 1558px;
+}
+
+.v2 .overlap-group-1-nav {
+  height: 100vh;
   left: 0;
-  object-fit: cover;
   position: absolute;
   top: 0;
   width: 1558px;
+}
+
+.v2 .introBackgroundCover {
+  position: absolute;
+  top: 1px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+.v2 .introBackground {
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.v2 .introBackgroundCover-nav {
+  height: 100vh;
+  width: 200px;
+  position: fixed;
+}
+
+.v2 .introBackground-nav {
+  height: 100vh;
+  width: 100vh;
+  position: fixed;
+}
+
+.v2 .rectangle-923-nav {
+  background-color: #343a39;
+  height: 100vh;
+  left: 59px;
+  mix-blend-mode: multiply;
+  position: absolute;
+  top: 1px;
+  width: 1440px;
 }
 
 .v2 .rectangle-923 {
@@ -145,12 +182,20 @@ top: 427px;
   width: 1440px;
 }
 
-.v2 .group-33927 {
+.largeHeadLargeMedium {
   height: 155px;
   left: 118px;
   position: absolute;
   top: 47px;
   width: 269px;
+}
+
+.largeHeadSmall {
+  height: 45px;
+  left: 118px;
+  position: absolute;
+  top: 47px;
+  width: 150px;
 }
 
 .v2 .menu-items {
@@ -164,21 +209,55 @@ top: 427px;
   top: 150px;
 }
 
+.infront {
+  z-index: 999;
+}
+
+.infront-bottom {
+  z-index: 888;
+}
+
+.nav-gitcoin-margin {
+  margin-top: 300px;
+}
+
+.nav-text-margin {
+  margin-top: 100px;
+}
+
+.smallerNavFont {
+  font-size: 16px;
+  line-height: 175%;
+}
+
+.top-navbar-text-style {
+  color: #6DC5A0;
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: normal;
+}
+
+.ant-drawer-header {
+  position: absolute;
+  padding: 16px 24px;
+  z-index: 99999;
+  color: rgba(0, 0, 0, 0.65);
+  background: #fff;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 1px solid #e8e8e8;
+  border-radius: 4px 4px 0 0;
+}
+.ant-drawer-body {
+  padding: 0;
+  margin-top: 0;
+}
+
 .v2 .group-33970 {
   height: 26px;
   margin-top: -0.46px;
   width: 86px;
-
-  /* Group 33970 */
-
-  position: static;
-  left: 0%;
-  right: 84.65%;
-  top: 0%;
-  bottom: 10.42%;
-
-
-  /* Inside Auto Layout */
   flex: none;
   order: 0;
   flex-grow: 0;
@@ -191,34 +270,28 @@ top: 427px;
   line-height: 28px;
   margin-left: 47px;
   min-width: 159px;
-  white-space: nowrap;
-
-  /* Explore Editions */
-
-  position: static;
-  left: 24.03%;
-  right: 47.57%;
-  top: 0%;
-  bottom: 0%;
+  white-space: wrap;
 
   font-family: 'Space Mono';
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
   line-height: 175%;
-  /* identical to box height, or 28px */
+
   display: flex;
   align-items: center;
 
   color: #6DC5A0;
+}
 
-
-  /* Inside Auto Layout */
-  flex: none;
-  order: 1;
-  flex-grow: 0;
-  margin: 0px 48px;
-
+.menuIconSmall {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  left: 650.06px;
+  top: 55px;
+  float: right;
+  z-index: 100;
 }
 
 .v2 .text-1-2 {
@@ -367,13 +440,6 @@ top: 427px;
 }
 
 .v2 .text-3 {
-  /* letter-spacing: 0;
-  line-height: 48px;
-  min-height: 96px;
-  width: 400px;
-
-  Gitcoin Comics -Edition #2 */
-
   position: absolute;
   width: 398px;
   height: 96px;
@@ -1337,7 +1403,6 @@ top: 427px;
 
 .v2 .group-33927-1 {
   height: 116px;
-  margin-right: 0.97px;
   width: 200px;
 }
 
@@ -1379,4 +1444,52 @@ top: 427px;
 .v2 .span12 {
   color: var(--ice-cold);
   font-weight: 600;
+}
+
+/* sidebar Nav */
+
+.navBar {
+  position: relative;
+}
+
+.navBar button {
+  position: fixed;
+  left: 40px;
+  top: 40px;
+  z-index: 10;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
+.menuNav {
+  overflow-y: scroll;
+  list-style: none;
+  position: fixed;
+  top: 0;
+  background: darkcyan;
+  left: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 0;
+  overflow: hidden;
+  max-width: 290px;
+  z-index: 9;
+}
+
+.menuNav.showMenu {
+  width: 100%;
+}
+
+a {
+  display: block;
+  padding: 10px 40px;
+  text-decoration: none;
+  color: #3fffd2;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.menuNav li:first-child {
+  margin-top: 7rem;
 }

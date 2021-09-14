@@ -1,12 +1,17 @@
+/* eslint-disable no-await-in-loop */
+/* eslint-disable no-unused-vars */
+/* eslint-disable jsx-a11y/alt-text */
 import WalletConnectProvider from "@walletconnect/web3-provider";
-import { Alert, Button, Card, Col, Input, List, Menu, Row, Image, PageHeader } from "antd";
+import { Alert, Button, Col, Menu, Row, Image, PageHeader, Drawer } from "antd";
 import "antd/dist/antd.css";
 import React, { useCallback, useEffect, useState } from "react";
-import ReactJson from "react-json-view";
-import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
 import Web3Modal from "web3modal";
 import "./App.css";
+<<<<<<< HEAD
 import { Faq } from "./components";
+=======
+import Media from "react-media";
+>>>>>>> develop
 import { INFURA_ID, NETWORK, NETWORKS } from "./constants";
 import { Transactor } from "./helpers";
 import {
@@ -21,12 +26,11 @@ import {
 } from "./hooks";
 
 // These assets will be used. Code using this is commented out
-import gitcoinlogo from "./assets/gitcoinlogo.svg";
 import introbackground from "./assets/introbackground.svg";
 import anonvsmolochlogo from "./assets/anonvsmolochlogo.svg";
 import ethbotbegins from "./assets/ethbotbegins.svg";
 import rectangle9221x from "./assets/rectangle-922@1x.svg";
-import image41x from "./assets/image-4@1x.png";
+import introBackground from "./assets/intro-background.png";
 import group339272x from "./assets/group-33927@2x.svg";
 import group339702x from "./assets/group-33970@2x.svg";
 import vector12x from "./assets/vector-1@2x.svg";
@@ -52,6 +56,7 @@ import bot211x from "./assets/bot2-1@1x.png";
 import layer212x from "./assets/layer-2-1@2x.png";
 import group3392712x from "./assets/group-33927-1@2x.svg";
 import frame144361x from "./assets/frame-14436@1x.svg";
+import burgerMenuIcon from "./assets/burgerMenuIcon.svg";
 
 const { SubMenu } = Menu;
 
@@ -258,7 +263,7 @@ function App(props) {
       setYourCollectibles(collectibleUpdate);
     };
     updateYourCollectibles();
-  }, [address, yourBalance]);
+  }, [address, yourBalance, balance, readContracts, localChainId]);
 
   /*
 	const addressFromENS = useResolveName(mainnetProvider, "austingriffith.eth");
@@ -301,6 +306,8 @@ function App(props) {
     readContracts,
     writeContracts,
     mainnetContracts,
+    localChainId,
+    myMainnetDAIBalance,
   ]);
 
   let networkDisplay = "";
@@ -410,7 +417,7 @@ function App(props) {
     !faucetClicked &&
     localProvider &&
     localProvider._network &&
-    localProvider._network.chainId == 31337 &&
+    localProvider._network.chainId === 31337 &&
     yourLocalBalance &&
     ethers.utils.formatEther(yourLocalBalance) <= 0
   ) {
@@ -426,7 +433,13 @@ function App(props) {
             setFaucetClicked(true);
           }}
         >
-          💰 Grab funds from the faucet ⛽️
+          <span role="img" aria-label="money-bag">
+            💰
+          </span>{" "}
+          Grab funds from the faucet{" "}
+          <span role="img" aria-label="gas-pump">
+            ⛽️
+          </span>
         </Button>
       </div>
     );
@@ -442,6 +455,15 @@ function App(props) {
 
   const [transferToAddresses, setTransferToAddresses] = useState({});
 
+  const [navVisible, setNavVisible] = useState(false);
+
+  const onClose = () => {
+    setNavVisible(false);
+  };
+  const showDrawer = () => {
+    setNavVisible(true);
+  };
+
   return (
     <body style={{ margin: 0, background: "#000000" }}>
       <input type="hidden" id="anPageName" name="page" value="v2" />
@@ -449,27 +471,128 @@ function App(props) {
         <div className="v2 screen">
           <div className="overlap-group8">
             <div className="overlap-group-1">
-              <img className="rectangle-922" src={rectangle9221x} />
-              <img className="image-4" src={image41x} />
+              <img alt="background image cover nav" className="v2 introBackgroundCover" src={rectangle9221x} />
+              <img alt="background image nav" className="v2 introBackground" src={introBackground} />
               <div className="rectangle-923" />
             </div>
-            <img className="group-33927" src={group339272x} />
+            <PageHeader
+              extra={[
+                <div key="navbar">
+                  <Media
+                    queries={{
+                      small: "(max-width: 699px)",
+                      medium: "(min-width: 700px) and (max-width: 1199px)",
+                      large: "(min-width: 1200px)",
+                    }}
+                  >
+                    {matches => (
+                      <>
+                        {matches.large || matches.medium ? (
+                          <div>
+                            <Image className="largeHeadLargeMedium" src={group339272x} />
+                            <Row className="menu-items spacemono-normal-green-sheen-16px" gutter={16}>
+                              <Col className="gutter-row" span={6}>
+                                <Image className="group-33970" src={group339702x} />
+                              </Col>
+                              <Col className="gutter-row" span={6}>
+                                <div className="top-navbar">Explore Editions</div>
+                              </Col>
+                              <Col className="gutter-row" span={6}>
+                                <div className="top-navbar">How It Works</div>
+                              </Col>
+                              <Col className="gutter-row" span={6}>
+                                <div className="top-navbar">About</div>
+                              </Col>
+                            </Row>
+                          </div>
+                        ) : (
+                          <div>
+                            <Image className="largeHeadSmall" src={group339272x} />
+                            <a onClick={showDrawer}>
+                              <Image className="menuIconSmall" src={burgerMenuIcon} />
+                            </a>
+                            <Drawer
+                              placement="bottom"
+                              closable
+                              onClose={onClose}
+                              visible={navVisible}
+                              width="100vh"
+                              height="100vh"
+                            >
+                              <div className="v2">
+                                <div className="overlap-group8-nav">
+                                  <div className="overlap-group-1-nav">
+                                    <img
+                                      className="v2 introBackgroundCover-nav"
+                                      src={rectangle9221x}
+                                      alt="rectangle background"
+                                    />
+                                    <img
+                                      className="v2 introBackground-nav"
+                                      src={introBackground}
+                                      alt="intro background"
+                                    />
+                                    <div className="rectangle-923-nav" />
+                                  </div>
+                                  <div>
+                                    <Image className="largeHeadSmall infront" src={group339272x} />
+                                    <a onClick={onClose}>
+                                      <Image className="menuIconSmall infront" src={burgerMenuIcon} />
+                                    </a>
+                                    <div className="nav-view-slider">
+                                      <Row gutter={16}>
+                                        <Col span={8} offset={4}>
+                                          <Image
+                                            className="infront-bottom nav-gitcoin-margin"
+                                            src={group339702x}
+                                            width={150}
+                                            height={100}
+                                          />
+                                        </Col>
+                                      </Row>
+                                      <Row gutter={16}>
+                                        <Col span={8} offset={4}>
+                                          <h1 className="top-navbar-text-style infront-bottom nav-text-margin">
+                                            Explore Editions
+                                          </h1>
+                                        </Col>
+                                      </Row>
+                                      <Row gutter={16}>
+                                        <Col span={8} offset={4}>
+                                          <h1 className="top-navbar-text-style infront-bottom nav-text-margin">
+                                            How It Works
+                                          </h1>
+                                        </Col>
+                                      </Row>
+                                      <Row gutter={16}>
+                                        <Col span={8} offset={4}>
+                                          <h1 className="top-navbar-text-style infront-bottom nav-text-margin">
+                                            About
+                                          </h1>
+                                        </Col>
+                                      </Row>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </Drawer>
+                          </div>
+                        )}
+                      </>
+                    )}
+                  </Media>
+                </div>,
+              ]}
+            />
+            {/* <Image className="group-33927" src={group339272x} />
             <div className="menu-items spacemono-normal-green-sheen-16px">
-              <img className="group-33970" src={group339702x} />
+              <Image className="group-33970" src={group339702x} />
               <div className="top-navbar">Explore Editions</div>
               <div className="top-navbar">How It Works</div>
               <div className="top-navbar">About</div>
-            </div>
+            </div> */}
 
-            <Menu mode="horizontal">
-              <Menu.Item key="mail">Navigation One</Menu.Item>
-              <Menu.Item key="app">Navigation Two</Menu.Item>
-              <Menu.Item key="alipay">
-                <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-                  Navigation Four - Link
-                </a>
-              </Menu.Item>
-            </Menu>
+            {/* <Navbar /> */}
 
             <div className="text-1-2">
               Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text
@@ -497,53 +620,51 @@ function App(props) {
 
             {/* Statues */}
             {/* 
-          <div className="group-33952">
-            <div className="group-33949">
-              <div className="group-33964">
-                <div className="group-33959">
-                  <div className="overlap-group-2">
-                    <img className="ellipse-14" src={ellipse142x} />
-                    <img className="layer-2er-1" src={layer2er12x} />
+            <div className="group-33952">
+              <div className="group-33949">
+                <div className="group-33964">
+                  <div className="group-33959">
+                    <div className="overlap-group-2">
+                      <img className="ellipse-14" src={ellipse142x} />
+                      <img className="layer-2er-1" src={layer2er12x} />
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="overlap-group1">
-                <div className="group-33948">
-                  <div className="eth-bot-statue">ETHBot Statue</div>
-                  <div className="btn-1 border-1px-jungle-green">
-                    <div className="x-eth">0.01 ETH</div>
+                <div className="overlap-group1">
+                  <div className="group-33948">
+                    <div className="eth-bot-statue">ETHBot Statue</div>
+                    <div className="btn-1 border-1px-jungle-green">
+                      <div className="x-eth">0.01 ETH</div>
+                    </div>
+                    <div className="text-6">
+                      <span className="span0">Only 300 Available<br /></span>
+                      <span className="span librefranklin-normal-bon-jour-22px">(</span>
+                      <span className="span2">Next one will cost 2ETH</span>
+                      <span className="span librefranklin-normal-bon-jour-22px">)</span>
+                    </div>
                   </div>
-                  <div className="text-6">
-                    <span className="span0">Only 300 Available<br /></span>
-                    <span className="span librefranklin-normal-bon-jour-22px">(</span>
-                    <span className="span2">Next one will cost 2ETH</span>
-                    <span className="span librefranklin-normal-bon-jour-22px">)</span>
-                  </div>
+                  <img className="fasfa-info-circle" src={fasfainfocircle2x} />
                 </div>
-                <img className="fasfa-info-circle" src={fasfainfocircle2x} />
               </div>
+              <img className="group-33948-1" src={group339482x} />
             </div>
-            <img className="group-33948-1" src={group339482x} />
-          </div>
-          <img className="vector-1" src={vector2x} /> */}
+            <img className="vector-1" src={vector2x} /> */}
           </div>
 
           {/* First banner */}
 
           {/* <div className="frame-14435">
-          <img className="group-33932" src={group339321x} />
-          <div className="text-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry</div>
-          <div className="btn-2 border-1px-jungle-green">
-            <img className="vector" src={vector12x} />
-            <div className="follow">Follow</div>
-          </div>
-        </div> */}
+            <img className="group-33932" src={group339321x} />
+            <div className="text-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry</div>
+            <div className="btn-2 border-1px-jungle-green">
+              <img className="vector" src={vector12x} />
+              <div className="follow">Follow</div>
+            </div>
+          </div> */}
 
           {/* Overlapping Div includes NFTs for sale, mentions bar and bottom banner */}
-
           <div className="overlap-group9">
             {/* NFT for sale bar */}
-
             {/* <div className="overlap-group2">
             <img className="bg" src={bg1x} />
             <div className="rectangle-1328"></div>
