@@ -5,6 +5,7 @@ import WalletConnectProvider from "@walletconnect/web3-provider";
 import { Alert, Button, Col, Menu, Row, Image, PageHeader, Drawer } from "antd";
 import "antd/dist/antd.css";
 import React, { useCallback, useEffect, useState } from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Web3Modal from "web3modal";
 import "./App.css";
 import Media from "react-media";
@@ -20,7 +21,7 @@ import {
   useOnBlock,
   useUserSigner,
 } from "./hooks";
-import { Store } from "./views/Store";
+import { Store } from "./views/Gallery";
 
 // These assets will be used. Code using this is commented out
 import introbackground from "./assets/introbackground.svg";
