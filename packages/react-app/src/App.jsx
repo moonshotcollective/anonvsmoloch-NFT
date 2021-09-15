@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 /* eslint-disable no-await-in-loop */
 /* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/alt-text */
@@ -9,7 +10,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Web3Modal from "web3modal";
 import "./App.css";
 import Media from "react-media";
-import { Faq, Footer } from "./components";
+import { Faq, Footer, MentionsBar, BannerBottom, BannerTop, StatueDisplay, NftForSale } from "./components";
 import { INFURA_ID, NETWORK, NETWORKS } from "./constants";
 import { Transactor } from "./helpers";
 import {
@@ -32,30 +33,18 @@ import rectangle9221x from "./assets/rectangle-922@1x.svg";
 import introBackground from "./assets/intro-background.png";
 import group339272x from "./assets/group-33927@2x.svg";
 import group339702x from "./assets/group-33970@2x.svg";
-import vector12x from "./assets/vector-1@2x.svg";
 import group339281x from "./assets/group-33928@1x.svg";
-import ellipse142x from "./assets/ellipse-14@2x.svg";
-import layer2er12x from "./assets/layer-2er-1@2x.png";
-import fasfainfocircle2x from "./assets/-fas-fa-info-circle@2x.svg";
-import group339482x from "./assets/group-33948@2x.svg";
-import vector2x from "./assets/vector@2x.svg";
-import group339321x from "./assets/group-33932@1x.svg";
 import group3395712x from "./assets/group-33957-1@2x.svg";
 import bg1x from "./assets/bg@1x.svg";
 import fasfainfocircle12x from "./assets/-fas-fa-info-circle-1@2x.svg";
 import group339661x from "./assets/group-33966@1x.svg";
 import star32x from "./assets/star-3@2x.svg";
 import star22x from "./assets/star-2@2x.svg";
-import maskgroup2x from "./assets/mask-group@2x.svg";
-import maskgroup12x from "./assets/mask-group-1@2x.svg";
-import maskgroup22x from "./assets/mask-group-2@2x.svg";
-import star11x from "./assets/star-1@1x.svg";
-import star212x from "./assets/star-2-1@2x.svg";
-import bot211x from "./assets/bot2-1@1x.png";
 import layer212x from "./assets/layer-2-1@2x.png";
 import group3392712x from "./assets/group-33927-1@2x.svg";
 import frame144361x from "./assets/frame-14436@1x.svg";
 import burgerMenuIcon from "./assets/burgerMenuIcon.svg";
+import vector12x from "./assets/vector-1@2x.svg";
 
 const { SubMenu } = Menu;
 const { ethers } = require("ethers");
@@ -187,42 +176,42 @@ function App(props) {
   //
   // 🧫 DEBUG 👨🏻‍🔬
   //
-  useEffect(() => {
-    if (
-      DEBUG &&
-      mainnetProvider &&
-      address &&
-      selectedChainId &&
-      yourLocalBalance &&
-      yourMainnetBalance &&
-      readContracts &&
-      writeContracts &&
-      mainnetContracts
-    ) {
-      console.log("_____________________________________ 🏗 scaffold-eth _____________________________________");
-      console.log("🌎 mainnetProvider", mainnetProvider);
-      console.log("🏠 localChainId", localChainId);
-      console.log("👩‍💼 selected address:", address);
-      console.log("🕵🏻‍♂️ selectedChainId:", selectedChainId);
-      console.log("💵 yourLocalBalance", yourLocalBalance ? ethers.utils.formatEther(yourLocalBalance) : "...");
-      console.log("💵 yourMainnetBalance", yourMainnetBalance ? ethers.utils.formatEther(yourMainnetBalance) : "...");
-      console.log("📝 readContracts", readContracts);
-      console.log("🌍 DAI contract on mainnet:", mainnetContracts);
-      console.log("💵 yourMainnetDAIBalance", myMainnetDAIBalance);
-      console.log("🔐 writeContracts", writeContracts);
-    }
-  }, [
-    mainnetProvider,
-    address,
-    selectedChainId,
-    yourLocalBalance,
-    yourMainnetBalance,
-    readContracts,
-    writeContracts,
-    mainnetContracts,
-    localChainId,
-    myMainnetDAIBalance,
-  ]);
+  // useEffect(() => {
+  //   if (
+  //     DEBUG &&
+  //     mainnetProvider &&
+  //     address &&
+  //     selectedChainId &&
+  //     yourLocalBalance &&
+  //     yourMainnetBalance &&
+  //     readContracts &&
+  //     writeContracts &&
+  //     mainnetContracts
+  //   ) {
+  //     console.log("_____________________________________ 🏗 scaffold-eth _____________________________________");
+  //     console.log("🌎 mainnetProvider", mainnetProvider);
+  //     console.log("🏠 localChainId", localChainId);
+  //     console.log("👩‍💼 selected address:", address);
+  //     console.log("🕵🏻‍♂️ selectedChainId:", selectedChainId);
+  //     console.log("💵 yourLocalBalance", yourLocalBalance ? ethers.utils.formatEther(yourLocalBalance) : "...");
+  //     console.log("💵 yourMainnetBalance", yourMainnetBalance ? ethers.utils.formatEther(yourMainnetBalance) : "...");
+  //     console.log("📝 readContracts", readContracts);
+  //     console.log("🌍 DAI contract on mainnet:", mainnetContracts);
+  //     console.log("💵 yourMainnetDAIBalance", myMainnetDAIBalance);
+  //     console.log("🔐 writeContracts", writeContracts);
+  //   }
+  // }, [
+  //   mainnetProvider,
+  //   address,
+  //   selectedChainId,
+  //   yourLocalBalance,
+  //   yourMainnetBalance,
+  //   readContracts,
+  //   writeContracts,
+  //   mainnetContracts,
+  //   localChainId,
+  //   myMainnetDAIBalance,
+  // ]);
 
   let networkDisplay = "";
   if (NETWORKCHECK && localChainId && selectedChainId && localChainId !== selectedChainId) {
@@ -339,9 +328,9 @@ function App(props) {
         <div className="v2 screen">
           <div className="overlap-group8">
             <div className="overlap-group-1">
-              <img alt="background image cover nav" className="v2 introBackgroundCover" src={rectangle9221x} />
+              <img alt="background image cover nav" className="min-w-full" src={rectangle9221x} />
               <img alt="background image nav" className="v2 introBackground" src={introBackground} />
-              <div className="rectangle-923" />
+              <div className="rectangle-923 min-w-full" />
             </div>
             <PageHeader
               extra={[
@@ -452,16 +441,10 @@ function App(props) {
                 </div>,
               ]}
             />
-            {/* <Image className="group-33927" src={group339272x} />
-            <div className="menu-items spacemono-normal-green-sheen-16px">
-              <Image className="group-33970" src={group339702x} />
-              <div className="top-navbar">Explore Editions</div>
-              <div className="top-navbar">How It Works</div>
-              <div className="top-navbar">About</div>
-            </div> */}
+            <Image className="group-33927" src={group339272x} />
 
             {/* <Navbar /> */}
-
+            <h1 className="text-4">The Greatest Larp has Begun</h1>
             <div className="text-1-2">
               Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text
               .
@@ -471,189 +454,18 @@ function App(props) {
               <img className="vector" src={vector12x} />
               <div className="follow">Follow</div>
             </Button>
-            <div className="rectangle-1288" />
-            <div className="group-33929">
-              <h1 className="text-4">The Greatest Larp has Begun</h1>
-
-              {/* Statue Text */}
-              {/* <div className="group-33937">
-              <div className="text-3 spacemono-normal-green-sheen-32px">Gitcoin Comics -Edition #2</div>
-              <div className="text-2-1">
-                Lorem Ipsum is simply dummy text of the printing and typesetting .Lorem Ipsum is simply dummy text.
-              </div>
-            </div> */}
-            </div>
-
-            <img className="group-33928" src={group339281x} />
-
-            {/* Statues */}
-            {/* 
-            <div className="group-33952">
-              <div className="group-33949">
-                <div className="group-33964">
-                  <div className="group-33959">
-                    <div className="overlap-group-2">
-                      <img className="ellipse-14" src={ellipse142x} />
-                      <img className="layer-2er-1" src={layer2er12x} />
-                    </div>
-                  </div>
-                </div>
-                <div className="overlap-group1">
-                  <div className="group-33948">
-                    <div className="eth-bot-statue">ETHBot Statue</div>
-                    <div className="btn-1 border-1px-jungle-green">
-                      <div className="x-eth">0.01 ETH</div>
-                    </div>
-                    <div className="text-6">
-                      <span className="span0">Only 300 Available<br /></span>
-                      <span className="span librefranklin-normal-bon-jour-22px">(</span>
-                      <span className="span2">Next one will cost 2ETH</span>
-                      <span className="span librefranklin-normal-bon-jour-22px">)</span>
-                    </div>
-                  </div>
-                  <img className="fasfa-info-circle" src={fasfainfocircle2x} />
-                </div>
-              </div>
-              <img className="group-33948-1" src={group339482x} />
-            </div>
-            <img className="vector-1" src={vector2x} /> */}
+            {/* Comic Book */}
+            <img className="group-33928 -mt-8" src={group339281x} />
           </div>
+          <StatueDisplay />
+          <BannerTop />
 
-          {/* First banner */}
-
-          {/* <div className="frame-14435">
-            <img className="group-33932" src={group339321x} />
-            <div className="text-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry</div>
-            <div className="btn-2 border-1px-jungle-green">
-              <img className="vector" src={vector12x} />
-              <div className="follow">Follow</div>
-            </div>
-          </div> */}
-
-          {/* Overlapping Div includes NFTs for sale, mentions bar and bottom banner */}
           <div className="overlap-group9">
-            {/* NFT for sale bar */}
-            {/* <div className="overlap-group2">
-            <img className="bg" src={bg1x} />
-            <div className="rectangle-1328"></div>
-            <div className="text-7">(75% proceeds go to Gitcoin Grants, 25=&gt; Artist)</div>
-            <div className="group-33968">
-              <div className="group-33951">
-                <div className="group-33964-1"><img className="group-33957" src={group3395712x} /></div>
-                <div className="overlap-group-3">
-                  <div className="group-15151">
-                    <div className="eth-bot-statue-1">ETHBot Statue</div>
-                    <div className="btn-3 border-1px-jungle-green"><div className="x-eth">0.05 ETH</div></div>
-                    <div className="text-8">
-                      <span className="span0">Only 300 Available<br /></span
-                      ><span className="span librefranklin-normal-bon-jour-22px">(</span
-                      ><span className="span2">Next one will cost 2ETH</span
-                      ><span className="span librefranklin-normal-bon-jour-22px">)</span>
-                    </div>
-                  </div>
-                  <img className="fasfa-info-circle-1" src={fasfainfocircle12x} />
-                </div>
-              </div>
-              <img className="group-33966" src={group339661x} />
-              <div className="overlap-group-4"><img className="fasfa-info-circle-2" src={vector2x} /></div>
-            </div>
-            <div className="lorem-ipsum spacemono-normal-emerald-32px">Lorem Ipsum</div>
-          </div>
-          <div className="overlap-group3">
-            <img className="star-3" src={star32x} />
-            <img className="star-2" src={star22x} />
-            <div className="new">NEW</div>
-          </div> */}
-
-            {/* Mentions Bar */}
-
-            {/* <div className="group-33969">
-            <div className="overlap-group5">
-              <div className="overlap-group4">
-                <div className="group-33931">
-                  <div className="text-9 spacemono-normal-green-sheen-32px">What people Are Saying About Us</div>
-                  <div className="flex-row-1">
-                    <div className="background-1 border-4px-green-sheen-2"></div>
-                    <div className="overlap-group1-1 border-4px-green-sheen-2">
-                      <div className="flex-row-2">
-                        <img className="mask-group" src={maskgroup2x} />
-                        <div className="flex-col">
-                          <div className="name">Kevin Owocki</div>
-                          <div className="owocki miriamlibre-normal-ice-cold-18px">@owocki</div>
-                        </div>
-                      </div>
-                      <div className="overlap-group-5">
-                        <p className="text-1 librefranklin-normal-bon-jour-16px">
-                          Lorem Ipsum has been survived not only five centuries, but also the leap into electronic
-                          typesetting, remaining essentially unchanged.
-                        </p>
-                        <div className="text-1-1 librefranklin-semi-bold-bon-jour-32px">“</div>
-                      </div>
-                    </div>
-                    <div className="background-2 border-4px-green-sheen-2"></div>
-                  </div>
-                </div>
-                <div className="group-33933">
-                  <div className="flex-row">
-                    <img className="mask-group" src={maskgroup12x} />
-                    <div className="flex-col">
-                      <div className="name">Kevin Owocki</div>
-                      <div className="owocki miriamlibre-normal-ice-cold-18px">@owocki</div>
-                    </div>
-                  </div>
-                  <div className="overlap-group">
-                    <p className="text-1 librefranklin-normal-bon-jour-16px">
-                      Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown
-                      printer took a galley of type and scrambled it to make a type specimen book.
-                    </p>
-                    <div className="text-1-1 librefranklin-semi-bold-bon-jour-32px">“</div>
-                  </div>
-                </div>
-                <div className="group-33935">
-                  <div className="flex-row">
-                    <img className="mask-group" src={maskgroup22x} />
-                    <div className="flex-col">
-                      <div className="name-1">Kevin Owocki</div>
-                      <div className="owocki miriamlibre-normal-ice-cold-18px">@owocki</div>
-                    </div>
-                  </div>
-                  <div className="overlap-group">
-                    <p className="text-1 librefranklin-normal-bon-jour-16px">
-                      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    </p>
-                    <div className="text-1-1 librefranklin-semi-bold-bon-jour-32px">“</div>
-                  </div>
-                </div>
-              </div>
-              <div className="text-16 spacemono-normal-green-sheen-42px">
-                &lt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;
-              </div>
-            </div>
-          </div> */}
-
-            {/* Bottom Banner */}
-
-            {/* <div className="frame-14437">
-            <div className="overlap-group6">
-              <div className="rectangle-1324"></div>
-              <img className="star-1" src={star11x} />
-              <img className="star-2-1" src={star212x} />
-              <img className="bot2-1" src={bot211x} />
-              <div className="overlap-group-6">
-                <div className="text-17 spacemono-normal-emerald-32px">Get the latest Edition</div>
-                <div className="text-18 librefranklin-normal-bon-jour-20px">
-                  Lorem Ipsum is simply dummy text of the printing .
-                </div>
-              </div>
-              <div className="btn-4"><div className="join-now">Join now</div></div>
-            </div>
-          </div> */}
-
-            {/* large bottom figure above banner */}
-            {/* <img className="layer-2-1" src={layer212x} /> */}
+            <NftForSale />
+            <MentionsBar />
+            <BannerBottom />
           </div>
 
-          {/* FAQ Component */}
           <Faq
             sectionTitle="FAQ’S !?"
             faqs={[
@@ -663,8 +475,6 @@ function App(props) {
               { title: "What is Lorem Ipsum?", description: "Lorem Ipsum has been the industry" },
             ]}
           />
-
-          {/* FOOTER */}
           <Footer />
         </div>
       </div>

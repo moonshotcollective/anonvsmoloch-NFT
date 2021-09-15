@@ -15,7 +15,7 @@ const ArrowButton = () => {
 
   return (
     <a type="button" onClick={changePanel}>
-      <img alt="panel arrown down" src={isOpen ? panelArrowDown : panelArrowUp} className="" />
+      <img alt="panel arrown down" src={isOpen ? panelArrowDown : panelArrowUp} className={"w-6"} />
     </a>
   );
 };
