@@ -8,7 +8,7 @@ module.exports = {
     colors: {
       orange: colors.orange,
       green: {
-        '050': '#6dc5a040',
+        050: '#6dc5a040',
       },
     },
   },

@@ -10,8 +10,8 @@ import discord from "../../assets/icon-discord.svg";
 
 const Footer = () => {
   return (
-	<div className="group-33962">
-	<Image key="Footer Bot Head" className="group-33927-1 align-center" src={group3392712x} />
+	<div className="group-33962 min-w-full">
+	<Image key="Footer Bot Head" className="footerBotHead align-center" src={group3392712x} />
 	<div className="frame-14437-1">
 		<div className="flex flex-row align-center">
 			<a key="youtube" href="">
@@ -27,7 +27,7 @@ const Footer = () => {
 				<Image key="discord" className="footer-icon" src={discord} />
 			</a>
 		</div>
-	  <div className="flex flex-row align-center">
+	  <div className="flex flex-row align-center container">
 		<span className="footer-font-v1">Powered by </span>
 		<span className="footer-font-v2">Gitcoin</span>
 		<span className="footer-font-v3"> | Direct by</span>

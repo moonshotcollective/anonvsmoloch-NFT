@@ -22,7 +22,7 @@ const Faq = ({ sectionTitle, faqs }) => {
     <div className="min-w-full bg-green-050">
       <div className="overlap-group7 grid grid-flow-row auto-rows-max md:auto-rows-min">
         <h1 className="faq-title text-center">{sectionTitle}</h1>
-        <Col span={12} offset={6}>
+        <div className="container">
           <Collapse onChange={changePanel}>
             {faqs.map((element, index) => (
               <>
@@ -39,7 +39,7 @@ const Faq = ({ sectionTitle, faqs }) => {
               </>
             ))}
           </Collapse>
-        </Col>
+        </div>
       </div>
     </div>
   );
