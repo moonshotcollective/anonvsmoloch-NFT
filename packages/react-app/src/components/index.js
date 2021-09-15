@@ -17,3 +17,8 @@ export { default as Wallet } from "./Wallet";
 export { default as L2Bridge } from "./L2Bridge";
 export { default as Faq } from "./Faq";
 export { default as Footer } from "./Footer";
+export { default as MentionsBar } from "./MentionsBar";
+export { default as BannerBottom } from "./BannerBottom";
+export { default as BannerTop } from "./BannerTop";
+export { default as StatueDisplay } from "./StatueDisplay";
+export { default as NftForSale } from "./NftForSale";

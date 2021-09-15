@@ -1,0 +1,165 @@
+.space-mono {
+	font-family: 'Space Mono';
+}
+
+.layer-2-1 {
+	position: absolute;
+	width: 379px;
+	height: 450px;
+	left: -280px;
+	top: 300px;
+}
+
+.flex-row-1 {
+	/* background */
+
+position: absolute;
+width: 350px;
+height: 350px;
+left: 170px;
+top: 2709px;
+
+border: 4px solid #6AC59F;
+box-sizing: border-box;
+
+}
+
+.group-33969 {
+	align-items: flex-start;
+	background-color: black;
+	display: flex;
+	height: 790px;
+	justify-content: flex-end;
+	left: 119px;
+	min-width: 1440px;
+	padding: 60px 100.0px;
+	position: absolute;
+	top: 911px;
+  }
+
+  .overlap-group5 {
+	height: 444px;
+	position: relative;
+	width: 1237px;
+  }
+
+  .overlap-group4 {
+	height: 444px;
+	left: 67px;
+	position: absolute;
+	top: 0;
+	width: 1112px;
+  }
+
+  .flex-row-1 {
+	align-items: flex-start;
+	display: flex;
+	margin-top: 46px;
+	min-width: 1110px;
+  }
+
+  .background-1 {
+	height: 350px;
+	width: 350px;
+  }
+
+  .overlap-group1-1 {
+	align-items: flex-start;
+	display: flex;
+	flex-direction: column;
+	margin-left: 30px;
+	min-height: 350px;
+	padding: 29px 20px;
+	width: 350px;
+  }
+
+  .flex-row-2 {
+	align-items: flex-end;
+	align-self: center;
+	display: flex;
+	margin-right: 24.0px;
+	min-width: 252px;
+  }
+
+  .mask-group {
+	height: 125px;
+	width: 125px;
+  }
+
+  .flex-col {
+	align-items: flex-start;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 6px;
+	margin-left: 9px;
+	min-height: 81px;
+	width: 118px;
+  }
+
+  .owocki {
+	letter-spacing: 0;
+	line-height: 27px;
+	min-height: 54px;
+  }
+
+  .overlap-group-5 {
+	height: 148px;
+	margin-top: 7px;
+	position: relative;
+	width: 304px;
+  }
+
+
+.text-1-2 {
+	position: absolute;
+	width: 550.26px;
+	height: 126px;
+	left: 210px;
+	top: 482px;
+  
+	font-family: 'Libre Franklin';
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	line-height: 175%;
+	/* or 42px */
+  
+	color: #C4C4C4;
+  }
+
+  .text-1-1 {
+	left: 0;
+	letter-spacing: 0;
+	line-height: 39.2px;
+	position: absolute;
+	top: 0;
+	white-space: nowrap;
+  }
+
+
+.background-2 {
+	height: 350px;
+	margin-left: 30px;
+	width: 350px;
+  }
+
+.mentions-title {
+	left: 100px;
+	letter-spacing: 0;
+	line-height: 34.5px;
+	position: absolute;
+	top: 50px;
+	white-space: nowrap;
+	color: #6AC59F;
+}
+
+.mentiongs-img {
+	left: 100px;
+	letter-spacing: 0;
+	line-height: 34.5px;
+	position: absolute;
+	top: 50px;
+	white-space: nowrap;
+	color: #6AC59F;
+	/* z-index:1000; */
+}

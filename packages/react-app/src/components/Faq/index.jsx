@@ -29,7 +29,7 @@ const Faq = ({ sectionTitle, faqs }) => {
                 <Panel
                   header={getTitle(element.title, index)}
                   key={getTitle(element.title, index)}
-                  className={isOpen ? "faq-panel-white" : "faq-panel-emrald"}
+                  className="faq-panel"
                   showArrow={false}
                   extra={<ArrowButton />}
                 >

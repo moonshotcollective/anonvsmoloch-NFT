@@ -1,0 +1,108 @@
+.frame-14437 {
+	height: 144px;
+	left: 119px;
+	position: absolute;
+	top: 1701px;
+  }
+
+  .overlap-group6 {
+	height: 352px;
+	margin-left: 205px;
+	margin-top: -98.99px;
+	position: relative;
+  }
+
+  .rectangle-1324 {
+	background-color: #2CAE92;
+	height: 144px;
+	left: 642px;
+	position: absolute;
+	top: 99px;
+	width: 593px;
+  }
+
+  .star-1 {
+	height: 352px;
+	left: 442px;
+	position: absolute;
+	top: 0;
+	width: 538px;
+  }
+  
+  .star-2-1 {
+	height: 291px;
+	left: 1043px;
+	position: absolute;
+	top: 19px;
+	width: 405px;
+  }
+  
+  .bot2-1 {
+	height: 256px;
+	left: 531px;
+	mix-blend-mode: multiply;
+	object-fit: cover;
+	position: absolute;
+	top: 50px;
+	width: 657px;
+  }
+
+  .overlap-group-6 {
+	height: 113px;
+	left: 0;
+	position: absolute;
+	top: 107px;
+	width: 828px;
+  }
+  
+  .text-17 {
+	left: 0;
+	letter-spacing: 0;
+	line-height: 48px;
+	position: absolute;
+	top: 0;
+	white-space: nowrap;
+	width: 828px;
+  }
+  
+  .text-18 {
+	left: 0;
+	letter-spacing: 0;
+	line-height: 35px;
+	position: absolute;
+	top: 43px;
+	width: 339px;
+  }
+
+  .join-now {
+	color: white;
+	font-family: 'Space Mono';
+	font-size: 20px;
+	letter-spacing: 0;
+	line-height: 35px;
+	min-height: 35px;
+	white-space: nowrap;
+	width: 102px;
+	/* Inside Auto Layout */
+	flex: none;
+	order: 1;
+	flex-grow: 0;
+	margin: 0px 10px;
+  }
+
+  .btn-4 {
+	align-items: center;
+	background-color: #2CAE92;
+	border-radius: 4px;
+	display: flex;
+	height: 55px;
+	justify-content: flex-end;
+	left: 487px;
+	min-width: 170px;
+	padding: 0 33px;
+	top: 136px;
+  }
+
+  .text-5 {
+	color: white;
+  }

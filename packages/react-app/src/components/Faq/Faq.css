@@ -114,24 +114,16 @@
 	border: 0;
   }
 
-  .faq-panel-white {
+  .faq-panel {
 	font-family: 'Space Mono';
 	font-style: normal;
 	font-weight: normal;
 	font-size: 24px;
-	color: white!;
-  }
-
-  .faq-panel-emrald {
-	font-family: 'Space Mono';
-	font-style: normal;
-	font-weight: normal;
-	font-size: 24px;
-	color: #6DC5A0!;
+	color: #6DC5A0;
   }
 
   .ant-collapse-header {
-	color: #11BC92;
+	color: #6DC5A0;
   }
 
   .ant-collapse-extra {

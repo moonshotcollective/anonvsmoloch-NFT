@@ -1,0 +1,78 @@
+.frame-14435 {
+	align-items: center;
+	display: flex;
+	height: 144px;
+	padding: 0 78px;
+  }
+
+  .v2 .group-33932 {
+	align-self: flex-end;
+	height: 182px;
+	margin-bottom: -36px;
+	margin-left: 20px;
+	width: 565px;
+  }
+
+  .text-5 {
+	color: white;
+	letter-spacing: 0;
+	line-height: 42px;
+	margin-left: 71px;
+	margin-top: 6.0px;
+  }
+
+  .btn-2 {
+	align-items: center;
+	border-radius: 4px;
+	display: flex;
+	height: 55px;
+	justify-content: flex-end;
+	margin-left: 28px;
+	margin-top: 7.0px;
+	min-width: 170px;
+	padding: 0 24.5px;
+	
+	background: #337062;
+	border: 1px solid #2CAE92;
+	box-sizing: border-box;
+	border-radius: 4px;
+  }
+
+  .vector {
+	height: 25px;
+	width: 32px;
+  }
+
+  .follow {
+	letter-spacing: 0;
+	line-height: 35px;
+	margin-left: 10px;
+	min-height: 35px;
+	white-space: nowrap;
+	width: 78px;
+  
+	/* Follow */
+  
+	position: static;
+	width: 76px;
+	height: 35px;
+	left: 86.5px;
+	top: 16px;
+  
+	font-family: 'Space Mono';
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	line-height: 175%;
+	/* identical to box height, or 35px */
+  
+	color: #6AC59F;
+  
+  
+	/* Inside Auto Layout */
+	flex: none;
+	order: 1;
+	flex-grow: 0;
+	margin: 0px 10px;
+  
+  }
