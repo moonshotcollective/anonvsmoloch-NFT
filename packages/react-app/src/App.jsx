@@ -9,6 +9,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Web3Modal from "web3modal";
 import "./App.css";
 import Media from "react-media";
+import { Faq, Footer } from "./components";
 import { INFURA_ID, NETWORK, NETWORKS } from "./constants";
 import { Transactor } from "./helpers";
 import {
@@ -60,7 +61,7 @@ const { SubMenu } = Menu;
 const { ethers } = require("ethers");
 
 /// 📡 What chain are your contracts deployed to?
-const targetNetwork = NETWORKS.localhost; // <------- select your target frontend network (localhost, rinkeby, xdai, mainnet)
+const targetNetwork = process.env.REACT_APP_NETWORK ? NETWORKS[process.env.REACT_APP_NETWORK] : NETWORKS.localhost; // <------- select your target frontend network (localhost, rinkeby, xdai, mainnet)
 
 // 😬 Sorry for all the console logging
 const DEBUG = true;
@@ -653,69 +654,20 @@ function App(props) {
           </div>
 
           {/* FAQ Component */}
-
-          {/* <div className="faq">
-          <div className="overlap-group7">
-            <div className="faqs spacemono-normal-emerald-32px">FAQ’S !?</div>
-            <div className="group-33939">
-              <div className="overlap-group-7">
-                <div className="background border-1px-jungle-green"></div>
-                <div className="address spacemono-normal-green-sheen-24px">#1 What is Lorem Ipsum?</div>
-                <div className="text-2 spacemono-normal-green-sheen-42px">&gt;</div>
-              </div>
-              <div className="overlap-group1-2">
-                <div className="background border-1px-jungle-green"></div>
-                <div className="background-3 border-1px-jungle-green"></div>
-                <div className="address-1">#2 What is Lorem Ipsum?</div>
-                <p className="text-21 librefranklin-normal-bon-jour-16px">
-                  Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum has been
-                  survived not only five centuries, but also the leap into electronic typesetting, remaining essentially
-                  unchanged.
-                </p>
-                <div className="text-22">&gt;</div>
-              </div>
-              <div className="overlap-group2-1">
-                <div className="background border-1px-jungle-green"></div>
-                <div className="background border-1px-jungle-green"></div>
-                <div className="address-2 spacemono-normal-green-sheen-24px">#2 What is Lorem Ipsum?</div>
-                <div className="text-2 spacemono-normal-green-sheen-42px">&gt;</div>
-              </div>
-              <div className="overlap-group3-1">
-                <div className="background border-1px-jungle-green"></div>
-                <div className="background border-1px-jungle-green"></div>
-                <div className="address spacemono-normal-green-sheen-24px">#2 What is Lorem Ipsum?</div>
-                <div className="text-2 spacemono-normal-green-sheen-42px">&gt;</div>
-              </div>
-            </div>
-          </div>
-        </div> */}
+          <Faq
+            sectionTitle="FAQ’S !?"
+            faqs={[
+              { title: "What is Lorem Ipsum?", description: "Lorem Ipsum has been the industry" },
+              { title: "What is Lorem Ipsum?", description: "Lorem Ipsum has been the industry" },
+              { title: "What is Lorem Ipsum?", description: "Lorem Ipsum has been the industry" },
+              { title: "What is Lorem Ipsum?", description: "Lorem Ipsum has been the industry" },
+            ]}
+          />
 
           {/* FOOTER */}
-          {/* <div className="group-33962">
-            <img className="group-33927-1" src={group3392712x} />
-            <div className="frame-14437-1">
-              <img className="frame-14436" src={frame144361x} />
-              <div className="text-19">
-                <span className="librefranklin-normal-bon-jour-20px">Powered by </span
-                ><span className="span-2 librefranklin-semi-bold-emerald-20px">Gitcoin</span
-                ><span className="librefranklin-normal-ice-cold-20px"> | Direct by</span
-                ><span className="librefranklin-normal-bon-jour-20px">&nbsp;</span
-                ><span className="span-2 librefranklin-semi-bold-emerald-20px">Devils Due</span
-                ><span className="librefranklin-normal-ice-cold-20px"> | Illustrated by</span
-                ><span className="librefranklin-normal-bon-jour-20px">&nbsp;</span
-                ><span className="span-2 librefranklin-semi-bold-emerald-20px">Josh Blaylock</span
-                ><span className="span8">&nbsp;</span><span className="librefranklin-normal-ice-cold-20px"> | Produced by</span
-                ><span className="librefranklin-normal-bon-jour-20px">&nbsp;</span
-                ><span className="librefranklin-semi-bold-emerald-20px">Devils Due </span><span className="span12"></span>
-              </div>
-            </div>
-          </div> */}
-          
+          <Footer />
         </div>
       </div>
-     
-
     </body>
   );
 }
