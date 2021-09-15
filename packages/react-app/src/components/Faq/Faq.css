@@ -27,8 +27,8 @@
 	display: flex;
 	flex-direction: column;
 	min-height: 734px;
+	max-height: 800px;
 	padding: 59px 160px;
-	width: 1440px;
   }
 
   .overlap-group-7 {

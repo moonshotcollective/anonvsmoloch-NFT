@@ -7,11 +7,8 @@ import "antd/dist/antd.css";
 import React, { useCallback, useEffect, useState } from "react";
 import Web3Modal from "web3modal";
 import "./App.css";
-<<<<<<< HEAD
-import { Faq } from "./components";
-=======
 import Media from "react-media";
->>>>>>> develop
+import { Faq, Footer } from "./components";
 import { INFURA_ID, NETWORK, NETWORKS } from "./constants";
 import { Transactor } from "./helpers";
 import {
@@ -69,7 +66,7 @@ const ipfs = ipfsAPI({ host: "ipfs.infura.io", port: "5001", protocol: "https" }
 const { ethers } = require("ethers");
 
 /// 📡 What chain are your contracts deployed to?
-const targetNetwork = NETWORKS.localhost; // <------- select your target frontend network (localhost, rinkeby, xdai, mainnet)
+const targetNetwork = process.env.REACT_APP_NETWORK ? NETWORKS[process.env.REACT_APP_NETWORK] : NETWORKS.localhost; // <------- select your target frontend network (localhost, rinkeby, xdai, mainnet)
 
 // 😬 Sorry for all the console logging
 const DEBUG = true;
@@ -797,25 +794,7 @@ function App(props) {
           />
 
           {/* FOOTER */}
-          {/* <div className="group-33962">
-          <img className="group-33927-1" src={group3392712x} />
-          <div className="frame-14437-1">
-            <img className="frame-14436" src={frame144361x} />
-            <div className="text-19">
-              <span className="librefranklin-normal-bon-jour-20px">Powered by </span
-              ><span className="span-2 librefranklin-semi-bold-emerald-20px">Gitcoin</span
-              ><span className="librefranklin-normal-ice-cold-20px"> | Direct by</span
-              ><span className="librefranklin-normal-bon-jour-20px">&nbsp;</span
-              ><span className="span-2 librefranklin-semi-bold-emerald-20px">Devils Due</span
-              ><span className="librefranklin-normal-ice-cold-20px"> | Illustrated by</span
-              ><span className="librefranklin-normal-bon-jour-20px">&nbsp;</span
-              ><span className="span-2 librefranklin-semi-bold-emerald-20px">Josh Blaylock</span
-              ><span className="span8">&nbsp;</span><span className="librefranklin-normal-ice-cold-20px"> | Produced by</span
-              ><span className="librefranklin-normal-bon-jour-20px">&nbsp;</span
-              ><span className="librefranklin-semi-bold-emerald-20px">Devils Due </span><span className="span12"></span>
-            </div>
-          </div>
-        </div> */}
+          <Footer />
         </div>
       </div>
     </body>

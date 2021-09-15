@@ -1,11 +1,8 @@
 import React, { useState } from "react";
-import { Collapse, Button, Col } from "antd";
+import { Collapse, Col } from "antd";
 import ArrowButton from "./ArrowButton";
 
 import "./Faq.css";
-
-import panelArrowUp from "../../assets/panel-arrow-up.svg";
-import panelArrowDown from "../../assets/panel-arrow-down.svg";
 
 const { Panel } = Collapse;
 
@@ -22,11 +19,9 @@ const Faq = ({ sectionTitle, faqs }) => {
   };
 
   return (
-    <div className="faq">
-      <div className="overlap-group7">
-        <Col span={12} offset={6}>
-          <h1 className="faq-title">{sectionTitle}</h1>
-        </Col>
+    <div className="min-w-full bg-green-050">
+      <div className="overlap-group7 grid grid-flow-row auto-rows-max md:auto-rows-min">
+        <h1 className="faq-title text-center">{sectionTitle}</h1>
         <Col span={12} offset={6}>
           <Collapse onChange={changePanel}>
             {faqs.map((element, index) => (
@@ -38,7 +33,7 @@ const Faq = ({ sectionTitle, faqs }) => {
                   showArrow={false}
                   extra={<ArrowButton />}
                 >
-                  <p>{element.description}</p>
+                  <p className="w-3/4">{element.description}</p>
                 </Panel>
                 <br />
               </>
