@@ -6,14 +6,16 @@ import React, { useState, useEffect } from "react";
 import { Address } from "../components";
 import { useContractReader, useEventListener } from "../hooks";
 
+// The following code is here in the case we want to mint nfts
+// and store the hash on IPFS.
 const { BufferList } = require("bl");
 // https://www.npmjs.com/package/ipfs-http-client
 const ipfsAPI = require("ipfs-http-client");
 
 const ipfs = ipfsAPI({ host: "ipfs.infura.io", port: "5001", protocol: "https" });
-
 const { ethers } = require("ethers");
 
+// The data model needed for nft metadata
 let STARTING_JSON_NFT = {
   description: "",
   external_url: "", // <-- this can link to a page for the specific file too
@@ -56,6 +58,7 @@ const Gallery = ({ userAddress, writeContracts, readContracts, localChainId, tx,
   };
 
   // keep track of a variable from the contract in the local React state:
+  // lets get the moonshotbots contract address
   const balance = useContractReader(readContracts, "YourCollectible", "balanceOf", [userAddress]);
   console.log("🤗 balance:", balance);
 
