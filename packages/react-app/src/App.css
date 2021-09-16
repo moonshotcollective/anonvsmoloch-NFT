@@ -90,39 +90,24 @@ top: 427px;
   color: #6DC5A0;
 }
 
-/* screen - v2 */
-
 .v2 {
   background-color: rgba(0, 0, 0, 0.65);
   overflow: hidden;
 }
 
-.v2 .overlap-group8 {
-  height: 1501px;
-  margin-left: -59px;
-  margin-top: -1px;
-  /* position: relative;
-  width: 1558px; */
+.overlap-group8 {
+  min-height: 1501px;
 }
 
-.v2 .overlap-group-1 {
-  height: 890px;
+.overlap-group-1 {
+  min-height: 890px;
   left: 0;
   position: absolute;
   top: 0;
-  width: 1558px;
 }
 
 .nav-view-slider {
   width: 100vh;
-}
-
-.v2 .overlap-group8-nav {
-  height: 100vh;
-  margin-left: -59px;
-  margin-top: 0;
-  position: relative;
-  width: 1558px;
 }
 
 .v2 .overlap-group-1-nav {
@@ -154,19 +139,20 @@ top: 427px;
 
 .v2 .rectangle-923-nav {
   background-color: #343a39;
-  height: 100vh;
   mix-blend-mode: multiply;
   position: absolute;
   top: 0px;
 }
 
-.v2 .rectangle-923 {
+.rectangle-923 {
   background-color: #343a39;
   height: 889px;
   mix-blend-mode: multiply;
   position: absolute;
   top: 0px;
 }
+
+
 
 .group-33927 {
   left: 1000px;
@@ -180,11 +166,11 @@ top: 427px;
   top: 0px;
   width: 269px;
   height: 155px;
-
+/* 
   position: absolute;
   height: 67px;
   left: 190px;
-  top: 210px;
+  top: 210px; */
 }
 
 .largeHeadSmall {
@@ -195,31 +181,12 @@ top: 427px;
   width: 150px;
 }
 
-.v2 .menu-items {
-  align-items: flex-start;
-  display: flex;
-  height: 28px;
-  justify-content: flex-end;
-  left: 463px;
-  min-width: 553px;
-  position: absolute;
-  top: 150px;
-}
-
 .infront {
   z-index: 999;
 }
 
-.infront-bottom {
-  z-index: 888;
-}
-
 .nav-gitcoin-margin {
   margin-top: 300px;
-}
-
-.nav-text-margin {
-  margin-top: 100px;
 }
 
 .smallerNavFont {
@@ -234,91 +201,44 @@ top: 427px;
   font-weight: normal;
 }
 
-.ant-drawer-header {
-  position: absolute;
-  padding: 16px 24px;
-  z-index: 99999;
-  color: rgba(0, 0, 0, 0.65);
-  background: #fff;
-  top: 0;
-  left: 0;
-  right: 0;
-  border-bottom: 1px solid #e8e8e8;
-  border-radius: 4px 4px 0 0;
-}
 .ant-drawer-body {
   padding: 0;
   margin-top: 0;
 }
 
-.v2 .group-33970 {
+.group-33970 {
   height: 26px;
-  margin-top: -0.46px;
-  width: 86px;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-  margin: 0px 48px;
 }
 
-.top-navbar {
-  height: 28px;
-  letter-spacing: 0;
-  line-height: 28px;
-  margin-left: 47px;
-  min-width: 159px;
-  white-space: wrap;
-
+.navbar-text {
+  color: #6DC5A0 !important;
   font-family: 'Space Mono';
   font-style: normal;
   font-weight: normal;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 175%;
-
-  display: flex;
-  align-items: center;
-
-  color: #6DC5A0;
 }
 
 .menuIconSmall {
-  position: absolute;
   width: 40px;
   height: 40px;
-  left: 650.06px;
-  top: 55px;
-  float: right;
   z-index: 100;
 }
 
 
 .v2 .x16d-10h-16m {
-  left: 225px;
   letter-spacing: 0;
   line-height: 48px;
   position: absolute;
-  top: 647px;
   white-space: nowrap;
-  width: 525px;
 
-  /* 16d 10h 16m */
-
-  position: absolute;
-  width: 523px;
-  height: 48px;
-  left: 210px;
-  top: 646px;
-
-  font-family: Space Mono;
+  font-family: 'Space Mono';
   font-style: normal;
   font-weight: normal;
   font-size: 32px;
   line-height: 150%;
-  /* identical to box height, or 48px */
 
   color: #6DC5A0;
-
-
 }
 
 .v2 .btn {
@@ -339,31 +259,29 @@ top: 427px;
 
 
 
-.text-4 {
+.title-line {
   color: #6AC59F;
   font-family: 'Space Mono';
-  font-size: 111px;
+  font-size: 40px;
   letter-spacing: 0;
   line-height: 102.7px;
   min-height: 206px;
-  width: 1170px;
   
   font-style: normal;
   font-weight: bold;
-  font-size: 111px;
   line-height: 92.5%;
-  
-  position: absolute;
-  height: 67px;
-  left: 190px;
-  top: 210px;
+  z-index: 999;
+}
+
+.intro-info {
+  font-family: 'Libre Franklin';
+  font-style: normal;
+  font-weight: normal;
+  color: #C4C4C4;
 }
 
 .v2 .group-33928 {
   height: 537px;
-  left: 894px;
-  position: absolute;
-  top: 350px;
   width: 372px;
 }
 
@@ -386,31 +304,18 @@ top: 427px;
 
 
 .twitter-follow-btn {
-
-  /* Auto Layout */
   display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
   padding: 16px 40px;
 
-  position: absolute;
   width: 208px;
   height: 67px;
-  left: 200px;
-  top: 732px;
 
   background: #337062;
   border: 1px solid #2CAE92;
   box-sizing: border-box;
   border-radius: 4px;
-
-  /* Inside Auto Layout */
-  flex: none;
-  order: 1;
-  flex-grow: 0;
-  margin: 0px 10px;
-
 }
 
 .v2 .btn-1 {
@@ -988,14 +893,14 @@ top: 427px;
   width: 100%;
 }
 
-a {
+/* a {
   display: block;
   padding: 10px 40px;
   text-decoration: none;
   color: #3fffd2;
   text-transform: uppercase;
   font-weight: bold;
-}
+} */
 
 .menuNav li:first-child {
   margin-top: 7rem;

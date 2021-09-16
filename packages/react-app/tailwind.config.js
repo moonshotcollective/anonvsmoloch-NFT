@@ -4,19 +4,24 @@ module.exports = {
   purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
-    colors: {
-      orange: colors.orange,
-      green: {
-        050: '#6dc5a040',
-        'dark-green': '#337062',
-        'teal': '#2CAE92'
+    extend: {
+      backgroundImage: {
+        'intro-background': "url('/src/assets/intro-background.png')"
       },
-      brown: {
-        'dark-brown': '#262626',
-      },
-      gray: {
-        050: '#FFFFFF'
+      colors: {
+        orange: colors.orange,
+        green: {
+          050: '#6dc5a040',
+          'dark-green': '#337062',
+          'teal': '#2CAE92'
+        },
+        brown: {
+          'dark-brown': '#262626',
+        },
+        gray: {
+          050: '#FFFFFF',
+          1000: '#343a39',
+        },
       },
     },
     fontFamily: {
@@ -29,6 +34,7 @@ module.exports = {
       '1/2': '50%',
       '3/4': '75%',
       'full': '100%',
+      'intro': '890px',
      }
   },
   variants: {
