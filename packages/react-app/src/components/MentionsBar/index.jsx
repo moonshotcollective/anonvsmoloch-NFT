@@ -42,60 +42,6 @@ const MentionsBar = () => {
 			</div>
 			{/* <img className="inline botfigure float-left invisible lg:visible" src={botFigure} /> */}
 		</section>
-
-
-	// <div className="mentions min-w-full">
-	// 		<div className=" grid grid-flow-row auto-rows-max md:auto-rows-min">
-	// 			<div className="flex flex-col">
-
-	// 				<h1 className="text-green-teal" >What Are People Saying About Us</h1>
-
-	// 				<div className="flex p-10 container">
-	// 					<div className="w-50 h-50 border-2 border-green-teal bg-black ml-3">
-
-	// 					</div>
-	// 					<div className="w-10 h-10 border-2 border-green-teal bg-black ml-3">
-
-	// 					</div>
-	// 					<div className="w-10 h-10 border-2 border-green-teal bg-black ml-3">
-
-	// 					</div>
-	// 				</div>
-
-	// 				{/* <img className="mentions-img inline" src={mentionsimg} /> */}
-
-	// 				<img className="inline layer-2-1 float-left invisible lg:visible" src={botFigure} />
-	// 			</div>
-	// 	</div>
-	// </div>
-
-
-	// <div className="min-w-full bg-green-050">
-	// <div className="overlap-group7 grid grid-flow-row auto-rows-max md:auto-rows-min">
-	// <h1 className="faq-title text-center">{sectionTitle}</h1>
-	// <div className="container w-full my-4">
-	// 	<Collapse>
-	// 	{faqs.map((element, index) => (
-	// 		<>
-	// 		<Panel
-	// 			header={getTitle(element.title, index)}
-	// 			key={getTitle(element.title, index)}
-	// 			className="faq-panel"
-	// 			onClick={changePanel}
-	// 			showArrow={false}
-	// 			extra={<ArrowButton />}
-	// 		>
-	// 			<p className="w-3/4">{element.description}</p>
-	// 		</Panel>
-	// 		<br />
-	// 		</>
-	// 	))}
-	// 	</Collapse>
-	// </div>
-	// </div>
-	// </div>
-
-
   );
 };
 
