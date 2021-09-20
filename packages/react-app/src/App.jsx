@@ -7,6 +7,7 @@ import { Alert, Button, Col, Menu, Row, Image, PageHeader, Drawer } from "antd";
 import "antd/dist/antd.css";
 import React, { useCallback, useEffect, useState } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Countdown from 'react-countdown';
 import Web3Modal from "web3modal";
 import "./App.css";
 import Media from "react-media";
@@ -26,23 +27,7 @@ import {
 import { Store } from "./views/Gallery";
 
 // These assets will be used. Code using this is commented out
-import introbackground from "./assets/introbackground.svg";
-import anonvsmolochlogo from "./assets/anonvsmolochlogo.svg";
-import ethbotbegins from "./assets/ethbotbegins.svg";
-import rectangle9221x from "./assets/rectangle-922@1x.svg";
-import introBackground from "./assets/intro-background.png";
 import group339272x from "./assets/group-33927@2x.svg";
-import gitcoinLogo from "./assets/gitcoinlogo.svg";
-import group339281x from "./assets/group-33928@1x.svg";
-import group3395712x from "./assets/group-33957-1@2x.svg";
-import bg1x from "./assets/bg@1x.svg";
-import fasfainfocircle12x from "./assets/-fas-fa-info-circle-1@2x.svg";
-import group339661x from "./assets/group-33966@1x.svg";
-import star32x from "./assets/star-3@2x.svg";
-import star22x from "./assets/star-2@2x.svg";
-import layer212x from "./assets/layer-2-1@2x.png";
-import group3392712x from "./assets/group-33927-1@2x.svg";
-import frame144361x from "./assets/frame-14436@1x.svg";
 import burgerMenuIcon from "./assets/burgerMenuIcon.svg";
 import vector12x from "./assets/vector-1@2x.svg";
 import anonvsmolochissue2 from "./assets/anonvsmoloch-issue2.svg";
@@ -64,12 +49,14 @@ if (DEBUG) console.log("📡 Connecting to Mainnet Ethereum");
 //
 // attempt to connect to our own scaffold eth rpc and if that fails fall back to infura...
 // Using StaticJsonRpcProvider as the chainId won't change see https://github.com/ethers-io/ethers.js/issues/901
+
 const scaffoldEthProvider = navigator.onLine
 	? new ethers.providers.StaticJsonRpcProvider("https://rpc.scaffoldeth.io:48544")
 	: null;
 const mainnetInfura = navigator.onLine
 	? new ethers.providers.StaticJsonRpcProvider("https://mainnet.infura.io/v3/" + INFURA_ID)
 	: null;
+
 // ( ⚠️ Getting "failed to meet quorum" errors? Check your INFURA_I
 
 // 🏠 Your local provider is usually pointed at your local blockchain
@@ -295,7 +282,7 @@ function App(props) {
 			setInjectedProvider(new ethers.providers.Web3Provider(provider));
 		});
 
-		// Subscribe to session disconnection
+
 		provider.on("disconnect", (code, reason) => {
 			console.log(code, reason);
 			logoutOfWeb3Modal();
@@ -325,140 +312,141 @@ function App(props) {
 	return (
 		<body style={{ margin: 0, background: "#000000" }}>
 			<input type="hidden" id="anPageName" name="page" value="v2" />
-			<div className="container min-w-full">
-				<div className="v2">
-					<div className="overlap-group8">
-						<div className="min-w-full min-h-intro bg-intro-background">
-							<div className="bg-gray-1000 mix-blend-multiply rectangle-923 min-w-full z-0" />
-										<Media
-											queries={{
-												small: "(max-width: 699px)",
-												medium: "(min-width: 700px) and (max-width: 1199px)",
-												large: "(min-width: 1200px)",
-											}}
-										>
-											{matches => (
-												<>
-													{matches.large || matches.medium ? (
-														<div>
-															<div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row align-middle">
-																<div className="flex items-center mb-4 md:mb">
-																	<Image src={group339272x} />
-																</div>
-																<div className="md:ml-auto md:mr-auto flex flex-wrap text-base items-center justify-center infront">
-																	<a className="mr-8">
-																		<Image className="h-10" src={gitcoinLogo} />
-																	</a>
-																	<div className="mr-8 navbar-text">Explore Editions</div>
-																	<a className="mr-8 navbar-text">How It Works</a>
-																	<a className="mr-8 navbar-text">About</a>
-																</div>
+			<div className="container min-w-full overflow-hidden bg-black">
+					<Media
+						queries={{
+							small: "(max-width: 699px)",
+							medium: "(min-width: 700px) and (max-width: 1199px)",
+							large: "(min-width: 1200px)",
+						}}
+					>
+						{matches => (
+							<>
+								{matches.large || matches.medium ? 
+								(
+										<div className="min-h-40">
+											<div className="w-full min-h-intro intro-background">
+														<div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row justify-items-center">
+															<div className="mb-4 float-left">
+																<Image preview={false} src={group339272x} />
 															</div>
-															<h1 className="text-4">The Greatest Larp has Begun</h1>
-															<div className="text-1-2">
-																Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text lorem
-																.
+															<div className="flex flex-grow float-left infront pl-10 py-28">
+																<a href="/" className="mr-8 navbar-text">Explore Editions</a>
+																<a href="/" className="mr-8 navbar-text">How It Works</a>
+																<a href="/" className="mr-8 navbar-text">About</a>
 															</div>
-															<div className="x16d-10h-16m spacemono-normal-green-sheen-32px">16d 10h 16m</div>
-															<Button className="twitter-follow-btn">
-																<img className="vector" src={vector12x} />
-																<div className="follow">Follow</div>
-															</Button>
-															<img className="group-33928 -mt-8" src={group339281x} />
 														</div>
-													) : (
-														<div>
+														<h1 className="intro-title-line">
+															The Greatest Larp has Begun
+														</h1>
+														<div className="intro-title-text">
+															Lorem Ipsum is simply dummy text of the printing and
+															typesetting industry.Lorem Ipsum is simply dummy text lorem
+															.
+														</div>
+														<Countdown className="intro-countdowntime" date={Date.now() + 50000}>
+															<div className="intro-countdowntime">16d 10h 16m</div>
+    													</Countdown>
+														<Button className="bannertop-twitterfollowbutton twitter-follow-btn">
+															<img className="bannertop-vector" src={vector12x} />
+															<div className="bannertop-follow">Follow</div>
+														</Button>
+														<Image preview={false} className="comic-issue -mt-10 relative" src={anonvsmolochissue2} />
+											</div>
+										</div>
+								) : (
+
+										<div className="w-full intro-background h-full">
+												<div className="container flex flex-row">
+														<div className="p-4 w-1/2">
+															<Image preview={false} className="h-24 float-left" src={group339272x} />
+														</div>
+														<div className="p-4 w-1/2">
+															<button className="float-right" onClick={showDrawer}>
+																<Image preview={false} className="menuIconSmall" src={burgerMenuIcon} />
+															</button>
+														</div>
+												</div>
+												<div className="space-y-6 infront">
+													<h1 className="intro-title-line-small infront justify-center text-center text-5xl relative mt-8">
+															The Greatest Larp has Begun
+													</h1>
+													<div className="relative justify-center mx-2 text-center intro-info absolute text-2xl">
+														Lorem Ipsum is simply dummy text of the printing and
+														typesetting industry.Lorem Ipsum is simply dummy text lorem
+														.
+													</div>
+													<div className="flex flex-grow py-4 justify-center text-4xl relative infront">
+														<Countdown className="intro-countdowntime-mobile" date={Date.now() + 50000}>
+															<div className="intro-countdowntime-mobile">16d 10h 16m</div>
+														</Countdown>	
+													</div>
+													<div className="flex flex-grow py-2 justify-center">
+														<Button className="twitter-follow-btn-mobile">
+															<img className="vector" src={vector12x} />
+															<div className="intro-follow-mobile mx-4">Follow</div>
+														</Button>
+													</div>
+													<div className="flex flex-grow py-2 justify-center">
+														<img className="w-3/4 z-50" src={anonvsmolochissue2} />
+													</div>
+												</div>
+											<Drawer
+													placement="bottom"
+													closable
+													onClose={onClose}
+													visible={navVisible}
+													width="100vh"
+													height="100vh"
+												>
+														<div className="bg-intro-background bg-no-repeat bg-center bg-cover min-h-full">
+															<div className="intro-drawerbackground min-w-full min-h-full -mb-8" />
+															<div>
 																<div className="container flex flex-row p-5">
 																		<div className="p-4 w-1/2">
 																			<Image preview={false} className="h-24 float-left" src={group339272x} />
 																		</div>
-																		<div className="p-4 w-1/2">
-																			<button className="float-right" onClick={showDrawer}>
+																		<div className="px-4 py-12 w-1/2">
+																			<button className="float-right" onClick={onClose}>
 																				<Image preview={false} className="menuIconSmall" src={burgerMenuIcon} />
 																			</button>
 																		</div>
 																</div>
-																<div className="space-y-6 infront">
-																	<div className="relative">
-																		<h1 className="title-line infront justify-center text-center">
-																			The Greatest Larp has Begun
-																		</h1>
+																<div className="mt-40">
+																	<div className="flex flex-grow py-20 justify-center">
+																		<a href="/" className="font-spacemono text-green-teal text-3xl infront">
+																			Explore Editions
+																		</a>
 																	</div>
-																	<div className="relative py-2 m-4 justify-center text-center intro-info absolute">
-																		Lorem Ipsum is simply dummy text of the printing and
-																		typesetting industry.Lorem Ipsum is simply dummy text lorem
-																		.
+																	<div className="flex flex-grow py-20 justify-center">
+																		<a href="/" className="font-spacemono text-green-teal text-3xl infront">
+																			How It Works
+																		</a>
 																	</div>
-																	<div className="flex flex-grow py-4 justify-center">
-																		<div className="x16d-10h-16m">16d 10h 16m</div>
-																	</div>
-																	<div className="flex flex-grow py-2 justify-center">
-																		<Button className="twitter-follow-btn">
-																			<img className="vector" src={vector12x} />
-																			<div className="follow">Follow</div>
-																		</Button>
-																	</div>
-																	<div className="flex flex-grow py-2 justify-center -mt-8">
-																		<img className="w-60" src={group339281x} />
+																	<div className="flex flex-grow py-20 justify-center">
+																		<a href="/"  className="font-spacemono text-green-teal text-3xl infront">
+																			About
+																		</a>
 																	</div>
 																</div>
-															<Drawer
-																placement="bottom"
-																closable
-																onClose={onClose}
-																visible={navVisible}
-																width="100vh"
-																height="100vh"
-															>
-																	<div className="bg-intro-background bg-no-repeat bg-center bg-cover min-h-full">
-																		<div className="rectangle-923 min-w-full min-h-full -mb-8" />
-																		<div>
-																			<div className="container flex flex-row p-5">
-																					<div className="p-4 w-1/2">
-																						<Image className="h-24 float-left" src={group339272x} />
-																					</div>
-																					<div className="px-4 py-12 w-1/2">
-																						<button className="float-right" onClick={onClose}>
-																							<Image className="menuIconSmall" src={burgerMenuIcon} />
-																						</button>
-																					</div>
-																			</div>
-																			<div className="mt-60">
-																				<div className="flex flex-grow py-20 justify-center">
-																					<a className="font-spacemono text-green-teal text-3xl infront">
-																						Explore Editions
-																					</a>
-																				</div>
-																				<div className="flex flex-grow py-20 justify-center">
-																					<a className="font-spacemono text-green-teal text-3xl infront">
-																						How It Works
-																					</a>
-																				</div>
-																				<div className="flex flex-grow py-20 justify-center">
-																					<a className="font-spacemono text-green-teal text-3xl infront">
-																						About
-																					</a>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-															</Drawer>
+															</div>
 														</div>
-													)}
-												</>
-											)}
-										</Media>
-						{/* <Navbar /> */}
-					</div>
-					</div>
+												</Drawer>
+										</div>
+								)}
+							</>
+						)}
+					</Media>
+
 					<StatueDisplay />
+
 					<BannerTop />
 
-					<div className="overlap-group9">
-						<NftForSale />
-						<MentionsBar />
-						<BannerBottom />
-					</div>
+					<NftForSale />
+
+					<MentionsBar />
+
+					<BannerBottom />
 
 					<Faq
 						sectionTitle="FAQ’S !?"
@@ -470,7 +458,6 @@ function App(props) {
 						]}
 					/>
 					<Footer />
-				</div>
 			</div>
 		</body>
 	);

@@ -1,8 +1,5 @@
-.frame-14437 {
+.bottom-bar {
 	height: 144px;
-	left: 119px;
-	position: absolute;
-	top: 1701px;
   }
 
   .overlap-group6 {
@@ -90,9 +87,8 @@
 	margin: 0px 10px;
   }
 
-  .btn-4 {
+  .bannerbottom-joinnow {
 	align-items: center;
-	background-color: #2CAE92;
 	border-radius: 4px;
 	display: flex;
 	height: 55px;
@@ -103,6 +99,20 @@
 	top: 136px;
   }
 
-  .text-5 {
+  .bannerbottom-joinnow-mobile {
+	border-radius: 4px;
+	height: 55px;
+	min-width: 170px;
+	padding: 0 33px;
+  }
+
+  .mobile-text-join-now  {
 	color: white;
+	font-family: 'Space Mono';
+	font-size: 20px;
+	letter-spacing: 0;
+	line-height: 35px;
+	min-height: 35px;
+	white-space: nowrap;
+	width: 102px;
   }

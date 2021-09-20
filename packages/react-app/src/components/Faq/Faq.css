@@ -5,87 +5,15 @@
 	font-style: normal;
 	font-weight: normal;
 	font-size: 50px;
-	line-height: 175%;
 	color: #11BC92;
-	text-align: center;
 	text-transform: uppercase;
-	align-items: center;
-	text-align: center!;
   }
 
-.faq {
-	align-items: center;
-	display: flex;
-	height: 734px;
-	min-width: 1442px;
-	text-align: center!;
-}
-
-.overlap-group7 {
+.faq-group-overlay {
 	align-items: flex-start;
-	background-color: #6dc5a040;
+	background-color: rgba(24, 43, 36);
 	display: flex;
 	flex-direction: column;
-	min-height: 734px;
-	max-height: 800px;
-	padding: 59px 160px;
-  }
-
-  .overlap-group-7 {
-	height: 63px;
-	margin-top: -2px;
-	position: relative;
-	width: 1112px;
-  }
-
-  .faqs {
-	letter-spacing: 0;
-	line-height: 48px;
-	min-height: 60px;
-	width: 667px;
-  }
-
-  .group-33939 {
-	align-items: center;
-	align-self: center;
-	display: flex;
-	flex-direction: column;
-	margin-right: 2.0px;
-	margin-top: 33px;
-	min-height: 467px;
-	width: 1112px;
-	color: white;
-  }
-
-  .text-2 {
-	left: 1048px;
-	letter-spacing: 0;
-	line-height: 63px;
-	position: absolute;
-	top: 0;
-	white-space: nowrap;
-	width: 38px;
-  }
-
-  .overlap-group1-2 {
-	height: 190px;
-	margin-top: 38px;
-	position: relative;
-	width: 1112px;
-  }
-
-  .overlap-group2-1 {
-	height: 63px;
-	margin-top: 16px;
-	position: relative;
-	width: 1112px;
-  }
-
-  .overlap-group3-1 {
-	height: 63px;
-	margin-top: 38px;
-	position: relative;
-	width: 1112px;
   }
 
   .ant-collapse-item {
@@ -129,4 +57,11 @@
   .ant-collapse-extra {
 	  margin-left: 20px;
   }
- 
+
+  .ant-collapse > .ant-collapse-item-active > .ant-collapse-header {
+	color: white !important;
+  }
+
+  .ant-collapse > .ant-collapse-item > .ant-collapse-header {
+	color: #6DC5A0;
+  }

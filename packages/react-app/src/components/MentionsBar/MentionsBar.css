@@ -1,13 +1,11 @@
-.space-mono {
-	font-family: 'Space Mono';
-}
 
-.layer-2-1 {
+
+.botfigure {
 	position: absolute;
 	width: 379px;
 	height: 450px;
-	left: -280px;
-	top: 300px;
+	left: -150px;
+	top: 370px;
 }
 
 .flex-row-1 {
@@ -24,17 +22,12 @@ box-sizing: border-box;
 
 }
 
-.group-33969 {
-	align-items: flex-start;
+.overlay {
 	background-color: black;
-	display: flex;
 	height: 790px;
-	justify-content: flex-end;
-	left: 119px;
-	min-width: 1440px;
-	padding: 60px 100.0px;
-	position: absolute;
-	top: 911px;
+	position: relative;
+	top: 811px;
+	left: 280px;
   }
 
   .overlap-group5 {
@@ -45,10 +38,8 @@ box-sizing: border-box;
 
   .overlap-group4 {
 	height: 444px;
-	left: 67px;
 	position: absolute;
 	top: 0;
-	width: 1112px;
   }
 
   .flex-row-1 {
@@ -144,13 +135,12 @@ box-sizing: border-box;
   }
 
 .mentions-title {
-	left: 100px;
 	letter-spacing: 0;
 	line-height: 34.5px;
-	position: absolute;
 	top: 50px;
 	white-space: nowrap;
 	color: #6AC59F;
+	
 }
 
 .mentiongs-img {
@@ -162,4 +152,46 @@ box-sizing: border-box;
 	white-space: nowrap;
 	color: #6AC59F;
 	/* z-index:1000; */
+}
+
+.mentions {
+	position: relative;
+	top: 912px;
+	min-height: 734px;
+	max-height: 800px;
+}
+
+
+
+
+.twitter-tweeter {
+	font-family: 'Miriam Libre';
+	font-style: normal;
+	font-weight: normal;
+	font-size: 15;
+	line-height: 150%;
+	color: #E2E0E7;
+}
+
+.twitter-handle {
+	font-family: 'Miriam Libre';
+	font-style: normal;
+	font-weight: normal;
+	font-size: 15px;
+	color: #B3FFED;
+}
+
+.twitter-tweet {
+
+	font-family: 'Libre Franklin';
+	font-style: normal;
+	font-weight: normal;
+	font-size: 15px;
+	line-height: 175%;
+	/* or 16px */
+
+	/* grey/100 */
+	color: #E2E0E7;
+
+
 }

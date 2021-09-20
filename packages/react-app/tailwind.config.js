@@ -6,7 +6,9 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'intro-background': "url('/src/assets/intro-background.png')"
+        'intro-background': "url('/src/assets/intro-background.png')",
+        'nft-background': "url('/src/assets/nft-background.svg')",
+        'nft3-background': "url('/src/assets/nft3-background.png')"
       },
       colors: {
         orange: colors.orange,
@@ -22,6 +24,10 @@ module.exports = {
           050: '#FFFFFF',
           1000: '#343a39',
         },
+        red: {
+          'bloodred': '#ea1e5047',
+          'soldout': '#EB1E50',
+        }
       },
     },
     fontFamily: {
@@ -35,6 +41,7 @@ module.exports = {
       '3/4': '75%',
       'full': '100%',
       'intro': '890px',
+      'intro-mobile': '450px',
      }
   },
   variants: {

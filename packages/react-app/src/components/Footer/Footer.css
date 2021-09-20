@@ -33,13 +33,12 @@
 	color: #B3FFED;
 }
 
-.group-33962 {
+.footer-background {
 	align-items: center;
 	background-color: #262626;
 	display: flex;
 	flex-direction: column;
 	min-height: 371px;
-	padding: 6.8px 0;
   }
 
   .footerBotHead {

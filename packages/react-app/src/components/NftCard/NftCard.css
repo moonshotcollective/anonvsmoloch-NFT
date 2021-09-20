@@ -1,0 +1,74 @@
+.nft-title {
+	font-family: 'Space Mono';
+	font-style: normal;
+	font-weight: bold;
+	font-size: 24px;
+	text-align: center;
+	color: #757087;
+  }
+
+  .soldoutbutton {
+
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 16px 40px;
+
+	width: 208px;
+	height: 67px;
+
+	background: #171818;
+	border: 1px solid #EB1E50;
+	box-sizing: border-box;
+	border-radius: 4px;
+
+	font-family: 'Space Mono';
+	font-style: normal;
+	font-weight: bold;
+	font-size: 20px;
+
+	color: #D44D6E;
+
+  }
+
+  .salebutton {
+
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 16px 40px;
+
+	width: 208px;
+	height: 67px;
+
+	font-family: 'Space Mono';
+	font-style: normal;
+	font-weight: bold;
+	font-size: 20px;
+
+	background: #171818;
+	border: 0.72043px solid #2CAE92;
+	box-sizing: border-box;
+	border-radius: 2.88172px;
+	color: #6AC59F;
+  }
+
+  .nft-description {
+	font-family: 'Libre Franklin';
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	text-align: center;
+	color: #757087;
+  }
+
+  .nft-description-available {
+	font-family: 'Libre Franklin';
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	text-align: center;
+	color: white;
+  }

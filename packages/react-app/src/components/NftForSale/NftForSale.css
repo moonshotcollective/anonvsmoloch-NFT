@@ -1,0 +1,192 @@
+
+  .nftforsale-background {
+	background: 
+	  linear-gradient(
+	 rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)
+	  ),
+	  url('../../assets/nft-background.svg');
+  }
+
+
+  .rectangle-1328 {
+	background-color: #ea1e5047;
+	height: 65px;
+	left: 0;
+	position: absolute;
+	top: 846px;
+	width: 1440px;
+  }
+
+  .bottom-tag-line {
+	color: white;
+	font-family: 'Space Mono';
+	letter-spacing: 0;
+	line-height: 34.5px;
+	background: rgba(235, 30, 80, 0.28);
+  }
+
+  .bottom-tag-line-rectangle {
+	height: 65px;
+	background: rgba(235, 30, 80, 0.28);
+  }
+
+  .group-33968 {
+	align-items: flex-start;
+	display: flex;
+	height: 510px;
+	left: 111px;
+	min-width: 1217px;
+	position: absolute;
+	top: 235px;
+  }
+
+  .group-33951 {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	min-height: 510px;
+	width: 343px;
+  }
+  
+  .group-33964-1 {
+	align-items: flex-start;
+	background-position: 50% 50%;
+	background-size: cover;
+	display: flex;
+	min-width: 344px;
+  }
+
+  .overlap-group-3 {
+	height: 170px;
+	margin-left: 7.14px;
+	margin-top: 12px;
+	position: relative;
+	width: 272px;
+  }
+
+  .group-15151 {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	left: 0;
+	min-height: 170px;
+	position: absolute;
+	top: 0;
+	width: 272px;
+  }
+
+  .eth-bot-statue-1 {
+	color: var(--bon-jour);
+	font-family: var(--font-family-space_mono);
+	font-size: var(--font-size-xxxxl);
+	font-weight: 700;
+	letter-spacing: 0;
+	line-height: 42px;
+	margin-right: 2.0px;
+	min-height: 42px;
+	text-align: center;
+	white-space: nowrap;
+	width: 270px;
+  }
+
+  .btn-3 {
+	align-items: center;
+	border-radius: 4px;
+	display: flex;
+	height: 67px;
+	justify-content: flex-end;
+	margin-right: 4.0px;
+	min-width: 208px;
+	padding: 0 53px;
+  }
+  
+  .text-8 {
+	color: transparent;
+	font-family: var(--font-family-libre_franklin);
+	font-size: var(--font-size-xxxxl);
+	letter-spacing: 0;
+	line-height: 28.1px;
+	margin-right: 2.0px;
+	margin-top: 7px;
+	min-height: 54px;
+	text-align: center;
+	width: 270px;
+  }
+
+
+ .fasfa-info-circle-1 {
+	height: 10px;
+	left: 242px;
+	position: absolute;
+	top: 122px;
+	width: 11px;
+  }
+  
+   .group-33966 {
+	height: 510px;
+	margin-left: 90px;
+	width: 351px;
+  }
+  
+   .overlap-group-4 {
+	align-items: flex-end;
+	background-size: 100% 100%;
+	display: flex;
+	height: 510px;
+	justify-content: flex-end;
+	margin-left: 90px;
+	min-width: 344px;
+	padding: 38px 73.9px;
+  }
+  
+   .fasfa-info-circle-2 {
+	height: 10px;
+	width: 10px;
+  }
+  
+   .lorem-ipsum {
+	left: 160px;
+	letter-spacing: 0;
+	line-height: 48px;
+	position: absolute;
+	top: 89px;
+	width: 667px;
+  }
+  
+   .overlap-group3 {
+	height: 126px;
+	left: 493px;
+	position: absolute;
+	top: 192px;
+	width: 130px;
+  }
+  
+   .star-3 {
+	height: 117px;
+	left: 0;
+	position: absolute;
+	top: 9px;
+	width: 120px;
+  }
+  
+   .star-2 {
+	height: 117px;
+	left: 10px;
+	position: absolute;
+	top: 0;
+	width: 120px;
+  }
+  
+   .new {
+	color: var(--black);
+	font-family: var(--font-family-space_mono);
+	font-size: var(--font-size-xxl);
+	font-weight: 700;
+	left: 50px;
+	letter-spacing: 0;
+	line-height: 38.5px;
+	position: absolute;
+	text-align: center;
+	top: 40px;
+	white-space: nowrap;
+  }
