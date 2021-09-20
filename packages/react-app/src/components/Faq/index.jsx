@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Collapse, Col } from "antd";
-import ArrowButton from "./ArrowButton";
+import { Collapse } from "antd";
 
 import "./Faq.css";
+
+import ArrowButton from "./ArrowButton";
 
 const { Panel } = Collapse;
 
@@ -19,17 +20,18 @@ const Faq = ({ sectionTitle, faqs }) => {
   };
 
   return (
-    <div className="min-w-full bg-green-050">
-      <div className="overlap-group7 grid grid-flow-row auto-rows-max md:auto-rows-min">
-        <h1 className="faq-title text-center">{sectionTitle}</h1>
-        <div className="container">
-          <Collapse onChange={changePanel}>
+    <div className="min-w-full">
+      <div className="faq-group-overlay grid grid-flow-row auto-rows-max md:auto-rows-min">
+        <h1 className="faq-title p-6 ml-6">{sectionTitle}</h1>
+        <div className="w-full my-4">
+          <Collapse>
             {faqs.map((element, index) => (
               <>
                 <Panel
                   header={getTitle(element.title, index)}
                   key={getTitle(element.title, index)}
-                  className="faq-panel"
+                  className="faq-panel mx-20"
+                  onClick={changePanel}
                   showArrow={false}
                   extra={<ArrowButton />}
                 >
