@@ -28,21 +28,29 @@ const Footer = () => {
 		</div>
 		<div className="container flex flex-wrap p-5 justify-center text-wrap">
 			<span className="footer-font-v1">Powered by </span>
-			<span className="footer-font-v2">Gitcoin</span>
+			<span className="footer-font-v2">
+				<a href="https://www.gitcoin.co/">
+					Gitcoin
+				</a>
+			</span>
 			<span className="footer-font-v3"> | Direct by</span>
 			<span className="footer-font-v3">&nbsp;</span>
 			<span className="footer-font-v2">
-				<a href="https://wwww.blaylockcomics.com">
+				<a href="http://www.joshblaylock.com/">
 					Blaylock Comics
 				</a>
 			</span>
 			<span className="footer-font-v3"> | Illustrated by</span>
 			<span className="footer-font-v2">&nbsp;</span>
-			<span className="footer-font-v2">Josh Blaylock</span>
+			<span className="footer-font-v2">
+				<a href="http://www.joshblaylock.com/">
+					Blaylock Comics
+				</a>
+			</span>
 			<span className="footer-font-v3">&nbsp;</span><span className="footer-font-v3"> | Produced by</span>
 			<span className="footer-font-v2">&nbsp;</span>
 			<span className="footer-font-v2">
-				<a href="https://wwww.blaylockcomics.com">
+				<a href="http://www.joshblaylock.com/">
 					Blaylock Comics
 				</a>
 			</span>
