@@ -9,10 +9,8 @@ import greenDot from "../../assets/dot-green.svg";
 const NftCard = ({ img, imgBackground, width, height, title, soldout, price, token, extraText }) => {
   return (
 	<div className="h-full border-opacity-60 rounded-lg overflow-hidden">
-		<div className="p-8 items-center justify-self-center">
-			<Image preview={false} src={img} width={width} height={height} />
-		</div>
-		<h2 className="tracking-widest text-md title-font font-medium text-gray-400 mb-1 nft-title p-2">{title}</h2>
+		<Image className="flex mx-auto mt-6 py-6 my-2 px-10" preview={false} src={img} />
+		<h2 className="tracking-widest text-md title-font font-medium text-gray-400 mb-1 nft-title p-2 mt-8">{title}</h2>
 		<div className="mb-3 nft-title">
 			{
 				soldout?
