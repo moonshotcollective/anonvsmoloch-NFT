@@ -31,13 +31,21 @@ const Footer = () => {
 			<span className="footer-font-v2">Gitcoin</span>
 			<span className="footer-font-v3"> | Direct by</span>
 			<span className="footer-font-v3">&nbsp;</span>
-			<span className="footer-font-v2">Devils Due</span>
+			<span className="footer-font-v2">
+				<a href="https://wwww.blaylockcomics.com">
+					Blaylock Comics
+				</a>
+			</span>
 			<span className="footer-font-v3"> | Illustrated by</span>
 			<span className="footer-font-v2">&nbsp;</span>
 			<span className="footer-font-v2">Josh Blaylock</span>
 			<span className="footer-font-v3">&nbsp;</span><span className="footer-font-v3"> | Produced by</span>
 			<span className="footer-font-v2">&nbsp;</span>
-			<span className="footer-font-v2">Devils Due</span>
+			<span className="footer-font-v2">
+				<a href="https://wwww.blaylockcomics.com">
+					Blaylock Comics
+				</a>
+			</span>
 		</div>
   	</div>
   );
