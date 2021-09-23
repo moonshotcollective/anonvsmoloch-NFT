@@ -402,7 +402,7 @@ function App(props) {
 														<div className="bg-intro-background bg-no-repeat bg-center bg-cover min-h-full">
 															<div className="intro-drawerbackground min-w-full min-h-full -mb-8" />
 															<div>
-																<div className="container flex flex-row p-5 pt-20">
+																<div className="container flex flex-row p-5 pt-36">
 																		<div className="p-4 w-1/2">
 																			<Image preview={false} className="h-24 float-left" src={group339272x} />
 																		</div>
