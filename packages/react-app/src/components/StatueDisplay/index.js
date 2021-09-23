@@ -7,6 +7,13 @@ import NftCard from "../NftCard";
 import molochStatueNft from "../../assets/moloch-statue-nft.png"
 import ethbotStatueNft from "../../assets/ethbot-statue-nft.png"
 
+//Statue Image Side View
+import molochStatue from "../../assets/Moloch_Angle_for_web.png";
+import ethbotStatue from "../../assets/ETHBot_Angle_for_web.png";
+
+import molochStatueFront from "../../assets/Moloch_Front_for_web.png";
+import ethbotStatueFront from "../../assets/ETHBot_Front_for_web.png";
+
 const Footer = () => {
   return (
       <section class="text-gray-600 body-font bg-brown-dark-brown">
@@ -20,12 +27,11 @@ const Footer = () => {
             </div>
             <div class="p-4 md:w-1/3">
                 <NftCard
-                  img={ethbotStatueNft}
-                  imgBackground={ethbotStatueNft}
+                  img={ethbotStatue}
                   width={300}
                   height={350}
                   title={'ETHBot Statue'}
-                  soldout={false}
+                  soldout={0}
                   price={0.01}
                   token={'Eth'}
                   extraText={'Only 300 Available'}
@@ -33,12 +39,11 @@ const Footer = () => {
             </div>
             <div class="p-4 md:w-1/3">
                 <NftCard
-                  img={molochStatueNft}
-                  imgBackground={molochStatueNft}
+                  img={molochStatue}
                   width={300}
                   height={350}
-                  title={'Moloch'}
-                  soldout={true}
+                  title={'Moloch Statue'}
+                  soldout={0}
                   price={0}
                   extraText={'(check the lasts)'}
                 />

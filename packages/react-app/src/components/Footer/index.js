@@ -13,15 +13,15 @@ const Footer = () => {
 	<div className="footer-background min-w-full p-5">
 		<Image preview={false} key="Footer Bot Head" className="footerBotHead align-center" src={group3392712x} />
 		<div className="flex flex-row p-6">
-			<a href="/" key="youtube" className="w-1/4 mx-6">
+			{/* <a href="/" key="youtube" className="w-1/4 mx-6">
 				<Image preview={false} key="youtube" className="footer-icon" src={youtube} />
-			</a>
+			</a> */}
 			<a href="/" key="twitter" className="w-1/4 mx-6">
 				<Image preview={false} key="twitter" className="footer-icon" src={twitter} />
 			</a>
-			<a href="/" key="mail" className="w-1/4 mx-6">
+			{/* <a href="/" key="mail" className="w-1/4 mx-6">
 				<Image preview={false} key="mail" className="footer-icon" src={mail} />
-			</a>
+			</a> */}
 			<a href="/" key="discord" className="w-1/4 mx-6">
 				<Image preview={false} key="discord" className="footer-icon" src={discord} />
 			</a>

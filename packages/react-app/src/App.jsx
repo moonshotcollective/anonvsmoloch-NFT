@@ -344,9 +344,9 @@ function App(props) {
 															typesetting industry.Lorem Ipsum is simply dummy text lorem
 															.
 														</div>
-														<Countdown className="intro-countdowntime" date={Date.now() + 50000}>
+														{/* <Countdown className="intro-countdowntime" date={Date.now() + 50000}>
 															<div className="intro-countdowntime">16d 10h 16m</div>
-    													</Countdown>
+    													</Countdown> */}
 														<Button className="bannertop-twitterfollowbutton twitter-follow-btn">
 															<img className="bannertop-vector" src={vector12x} />
 															<div className="bannertop-follow">Follow</div>
@@ -376,11 +376,11 @@ function App(props) {
 														typesetting industry.Lorem Ipsum is simply dummy text lorem
 														.
 													</div>
-													<div className="flex flex-grow py-4 justify-center text-4xl relative infront">
+													{/* <div className="flex flex-grow py-4 justify-center text-4xl relative infront">
 														<Countdown className="intro-countdowntime-mobile" date={Date.now() + 50000}>
 															<div className="intro-countdowntime-mobile">16d 10h 16m</div>
 														</Countdown>	
-													</div>
+													</div> */}
 													<div className="flex flex-grow py-2 justify-center">
 														<Button className="twitter-follow-btn-mobile">
 															<img className="vector" src={vector12x} />
@@ -402,7 +402,7 @@ function App(props) {
 														<div className="bg-intro-background bg-no-repeat bg-center bg-cover min-h-full">
 															<div className="intro-drawerbackground min-w-full min-h-full -mb-8" />
 															<div>
-																<div className="container flex flex-row p-5">
+																<div className="container flex flex-row p-5 pt-10">
 																		<div className="p-4 w-1/2">
 																			<Image preview={false} className="h-24 float-left" src={group339272x} />
 																		</div>
@@ -440,11 +440,11 @@ function App(props) {
 
 					<StatueDisplay />
 
-					<BannerTop />
+					{/* <BannerTop /> */}
 
-					<NftForSale />
+					{/* <NftForSale /> */}
 
-					<MentionsBar />
+					{/* <MentionsBar /> */}
 
 					<BannerBottom />
 
