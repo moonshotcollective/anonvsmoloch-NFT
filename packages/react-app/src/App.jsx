@@ -402,7 +402,7 @@ function App(props) {
 														<div className="bg-intro-background bg-no-repeat bg-center bg-cover min-h-full">
 															<div className="intro-drawerbackground min-w-full min-h-full -mb-8" />
 															<div>
-																<div className="container flex flex-row p-5 pt-10">
+																<div className="container flex flex-row p-5 pt-36">
 																		<div className="p-4 w-1/2">
 																			<Image preview={false} className="h-24 float-left" src={group339272x} />
 																		</div>
@@ -412,7 +412,7 @@ function App(props) {
 																			</button>
 																		</div>
 																</div>
-																<div className="mt-40">
+																<div className="mt-20">
 																	<div className="flex flex-grow py-20 justify-center">
 																		<a href="/" className="font-spacemono text-green-teal text-3xl infront">
 																			Explore Editions
