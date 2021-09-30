@@ -44,6 +44,23 @@
 	width: 657px;
   }
 
+  .star-1-mobile {
+	height: 352px;
+	top: 0;
+	width: 538px;
+	position: absolute;
+	right: 100px;
+  }
+  
+  .bot2-1-mobile {
+	height: 256px;
+	mix-blend-mode: multiply;
+	object-fit: cover;
+	position: absolute;
+	top: 50px;
+	width: 657px;
+  }
+
   .overlap-group-6 {
 	height: 113px;
 	left: 0;

@@ -12,7 +12,7 @@ const getTitle = (title, index) => {
   return `#${num} ${title}  `;
 };
 
-const Faq = ({ sectionTitle, faqs }) => {
+const Faq = ({ sectionTitle }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const changePanel = () => {
@@ -25,21 +25,45 @@ const Faq = ({ sectionTitle, faqs }) => {
         <h1 className="faq-title p-6 ml-6">{sectionTitle}</h1>
         <div className="w-full my-4">
           <Collapse>
-            {faqs.map((element, index) => (
-              <>
                 <Panel
-                  header={getTitle(element.title, index)}
-                  key={getTitle(element.title, index)}
+                  header={getTitle("What is the greatest LARP", 1)}
+                  key={getTitle("What is the greatest LARP", 1)}
                   className="faq-panel mx-20"
                   onClick={changePanel}
                   showArrow={false}
                   extra={<ArrowButton />}
                 >
-                  <p className="w-3/4">{element.description}</p>
+                  <p className="w-3/4">{"Youll see on October 2020"}</p>
                 </Panel>
                 <br />
-              </>
-            ))}
+                <Panel
+                  header={getTitle("I heard there was a ETHBot vs Moloch comic. Where can I see it?", 2)}
+                  key={getTitle("I heard there was a ETHBot vs Moloch comic. Where can I see it?", 2)}
+                  className="faq-panel mx-20"
+                  onClick={changePanel}
+                  showArrow={false}
+                  extra={<ArrowButton />}
+                >
+                  <p className="w-3/4">
+                    <a href="https://gitcoin.co/quadraticlands/mission/ql-lore">Go here</a> 
+                  </p>
+                </Panel>
+                <br />
+                <Panel
+                  header={getTitle("What is meditations on moloch?", 3)}
+                  key={getTitle("What is meditations on moloch?", 3)}
+                  className="faq-panel mx-20"
+                  onClick={changePanel}
+                  showArrow={false}
+                  extra={<ArrowButton />}
+                >
+                  <p className="w-3/4">
+                    <a href="https://slatestarcodex.com/2014/07/30/meditations-on-moloch/">
+                      Check this out
+                    </a>
+                  </p>
+                </Panel>
+                <br />
           </Collapse>
         </div>
       </div>

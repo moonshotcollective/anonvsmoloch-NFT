@@ -248,38 +248,20 @@ body .min-h-intro{
 }
 
 .intro-title-line {
-  /* The Greatest Larp has Begun */
-
-  position: absolute;
-  height: 206px;
-  left: 153px;
-  top: 250px;
-
   font-family: 'Space Mono';
   font-style: normal;
   font-weight: bold;
   font-size: 111px;
   line-height: 92.5%;
-
   color: #6AC59F;
 }
 
 .intro-title-text {
-  /* Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text . */
-
-  position: absolute;
-  width: 550.26px;
-  height: 126px;
-  left: 166px;
-  top: 482px;
-
-  font-family: Libre Franklin;
+  font-family: 'Libre Franklin';
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
   line-height: 175%;
-  /* or 42px */
-
   color: #C4C4C4;
 }
 

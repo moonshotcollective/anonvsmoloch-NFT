@@ -62,6 +62,13 @@
 	color: white !important;
   }
 
+  .ant-collapse > .ant-collapse-item-active > .ant-collapse-content > .ant-collapse-content-box > p > a {
+	font-style: normal;
+	font-weight: 600;
+	line-height: 175%;
+	color: #11BC92;
+  }
+
   .ant-collapse > .ant-collapse-item > .ant-collapse-header {
 	color: #6DC5A0;
   }

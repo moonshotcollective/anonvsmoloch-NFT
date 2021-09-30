@@ -331,11 +331,13 @@ function App(props) {
 																<Image preview={false} src={group339272x} />
 															</div>
 														</div>
-														<h1 className="intro-title-line">
-															The Greatest Larp begins soon.
-														</h1>
-														<div className="intro-title-text">
-															Check back around October 20-22 to see the Greatest LARP.
+														<div className="container ml-20">
+															<h1 className="intro-title-line">
+																The Greatest Larp begins soon.
+															</h1>
+															<p className="intro-title-text my-6">
+																Check back around October 20-22 to see the Greatest LARP.
+															</p>
 														</div>
 														{/* <Countdown className="intro-countdowntime" date={Date.now() + 50000}>
 															<div className="intro-countdowntime">16d 10h 16m</div>
@@ -349,35 +351,33 @@ function App(props) {
 														<div className="p-4 w-1/2">
 															<Image preview={false} className="h-24 float-left" src={group339272x} />
 														</div>
-														<div className="p-4 w-1/2">
+														{/* <div className="p-4 w-1/2">
 															<button className="float-right" onClick={showDrawer}>
 																<Image preview={false} className="menuIconSmall" src={burgerMenuIcon} />
 															</button>
-														</div>
+														</div> */}
 												</div>
-												<div className="space-y-6 infront">
-													<h1 className="intro-title-line-small infront justify-center text-center text-5xl relative mt-8">
-															The Greatest Larp has Begun
+												<div className="space-y-6 infront m-8 pb-8">
+													<h1 className="intro-title-line-small infront justify-center text-center text-5xl relative mt-10">
+														The Greatest Larp begins soon.
 													</h1>
 													<div className="relative justify-center mx-2 text-center intro-info absolute text-2xl">
-														Lorem Ipsum is simply dummy text of the printing and
-														typesetting industry.Lorem Ipsum is simply dummy text lorem
-														.
+														Check back around October 20-22 to see the Greatest LARP.
 													</div>
 													{/* <div className="flex flex-grow py-4 justify-center text-4xl relative infront">
 														<Countdown className="intro-countdowntime-mobile" date={Date.now() + 50000}>
 															<div className="intro-countdowntime-mobile">16d 10h 16m</div>
 														</Countdown>	
 													</div> */}
-													<div className="flex flex-grow py-2 justify-center">
+													{/* <div className="flex flex-grow py-2 justify-center">
 														<Button className="twitter-follow-btn-mobile">
 															<img className="vector" src={vector12x} />
 															<div className="intro-follow-mobile mx-4">Follow</div>
 														</Button>
-													</div>
-													<div className="flex flex-grow py-2 justify-center">
+													</div> */}
+													{/* <div className="flex flex-grow py-2 justify-center">
 														<img className="w-3/4 z-50" src={anonvsmolochissue2} />
-													</div>
+													</div> */}
 												</div>
 											<Drawer
 													placement="bottom"
@@ -387,8 +387,8 @@ function App(props) {
 													width="100vh"
 													height="100vh"
 												>
-														<div className="bg-intro-background bg-no-repeat bg-center bg-cover min-h-full">
-															<div className="intro-drawerbackground min-w-full min-h-full -mb-8" />
+														<div className="bg-intro-background bg-no-repeat bg-center bg-cover min-h-full m-4">
+															<div className="intro-drawerbackground min-w-full min-h-full" />
 															<div>
 																<div className="container flex flex-row p-5 pt-36">
 																		<div className="p-4 w-1/2">
@@ -420,14 +420,8 @@ function App(props) {
 
 					<BannerBottom />
 
-					<Faq
-						sectionTitle="FAQ:"
-						faqs={[
-							{ title: "What is the greatest LARP", description: "Youll see on October 2020" },
-							{ title: "I heard there was a ETHBot vs MOloch comic. Where can I see it?", description: "Go to https://gitcoin.co/quadraticlands/mission/ql-lore" },
-							{ title: "What is meditations on moloch?", description: "Check out https://slatestarcodex.com/2014/07/30/meditations-on-moloch/" },
-						]}
-					/>
+					<Faq sectionTitle="FAQ:"/>
+
 					<Footer />
 			</div>
 		</body>
