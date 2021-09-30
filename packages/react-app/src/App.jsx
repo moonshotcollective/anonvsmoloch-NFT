@@ -330,28 +330,16 @@ function App(props) {
 															<div className="mb-4 float-left">
 																<Image preview={false} src={group339272x} />
 															</div>
-															<div className="flex flex-grow float-left infront pl-10 py-28">
-																<a href="/" className="mr-8 navbar-text">Explore Editions</a>
-																<a href="/" className="mr-8 navbar-text">How It Works</a>
-																<a href="/" className="mr-8 navbar-text">About</a>
-															</div>
 														</div>
 														<h1 className="intro-title-line">
-															The Greatest Larp has Begun
+															The Greatest Larp begins soon.
 														</h1>
 														<div className="intro-title-text">
-															Lorem Ipsum is simply dummy text of the printing and
-															typesetting industry.Lorem Ipsum is simply dummy text lorem
-															.
+															Check back around October 20-22 to see the Greatest LARP.
 														</div>
 														{/* <Countdown className="intro-countdowntime" date={Date.now() + 50000}>
 															<div className="intro-countdowntime">16d 10h 16m</div>
     													</Countdown> */}
-														<Button className="bannertop-twitterfollowbutton twitter-follow-btn">
-															<img className="bannertop-vector" src={vector12x} />
-															<div className="bannertop-follow">Follow</div>
-														</Button>
-														<Image preview={false} className="comic-issue -mt-10 relative" src={anonvsmolochissue2} />
 											</div>
 										</div>
 								) : (
@@ -412,23 +400,7 @@ function App(props) {
 																			</button>
 																		</div>
 																</div>
-																<div className="mt-20">
-																	<div className="flex flex-grow py-20 justify-center">
-																		<a href="/" className="font-spacemono text-green-teal text-3xl infront">
-																			Explore Editions
-																		</a>
-																	</div>
-																	<div className="flex flex-grow py-20 justify-center">
-																		<a href="/" className="font-spacemono text-green-teal text-3xl infront">
-																			How It Works
-																		</a>
-																	</div>
-																	<div className="flex flex-grow py-20 justify-center">
-																		<a href="/"  className="font-spacemono text-green-teal text-3xl infront">
-																			About
-																		</a>
-																	</div>
-																</div>
+
 															</div>
 														</div>
 												</Drawer>
@@ -449,12 +421,11 @@ function App(props) {
 					<BannerBottom />
 
 					<Faq
-						sectionTitle="FAQ’S !?"
+						sectionTitle="FAQ:"
 						faqs={[
-							{ title: "What is Lorem Ipsum?", description: "Lorem Ipsum has been the industry" },
-							{ title: "What is Lorem Ipsum?", description: "Lorem Ipsum has been the industry" },
-							{ title: "What is Lorem Ipsum?", description: "Lorem Ipsum has been the industry" },
-							{ title: "What is Lorem Ipsum?", description: "Lorem Ipsum has been the industry" },
+							{ title: "What is the greatest LARP", description: "Youll see on October 2020" },
+							{ title: "I heard there was a ETHBot vs MOloch comic. Where can I see it?", description: "Go to https://gitcoin.co/quadraticlands/mission/ql-lore" },
+							{ title: "What is meditations on moloch?", description: "Check out https://slatestarcodex.com/2014/07/30/meditations-on-moloch/" },
 						]}
 					/>
 					<Footer />

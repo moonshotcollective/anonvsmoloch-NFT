@@ -106,7 +106,9 @@ top: 427px;
 .overlap-group8 {
   min-height: 1000px;
 }
-
+body .min-h-intro{
+    min-height: 690px;
+}
 .overlap-group-1 {
   min-height: 890px;
   left: 0;

@@ -27,15 +27,9 @@ const BannerBottom = () => {
 								<img alt="" className="star-2-1" src={star212x} />
 								<img alt="" className="bot2-1" src={bot211x} />
 								<div className="overlap-group-6 mr-12">
-									<div className="text-green-teal text-3xl font-spacemono">
-										Get the latest Edition
-									</div>
-									<div className="text-2xl font-librefranklin text-white">
-										Lorem Ipsum is simply dummy text.
-									</div>
+
 								</div>
 								<Button className="bannerbottom-joinnow mx-8 bg-green-teal join-now font-spacemono">
-									<p>Join now</p>
 								</Button>
 							</div>
 						</div>

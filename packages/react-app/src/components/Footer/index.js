@@ -16,13 +16,13 @@ const Footer = () => {
 			{/* <a href="/" key="youtube" className="w-1/4 mx-6">
 				<Image preview={false} key="youtube" className="footer-icon" src={youtube} />
 			</a> */}
-			<a href="/" key="twitter" className="w-1/4 mx-6">
+			<a href="https://twitter.com/moonshotcollect" key="twitter" className="w-1/4 mx-6">
 				<Image preview={false} key="twitter" className="footer-icon" src={twitter} />
 			</a>
-			{/* <a href="/" key="mail" className="w-1/4 mx-6">
+			{/* <a href="mailto:founders@gitcoin.co" key="mail" className="w-1/4 mx-6">
 				<Image preview={false} key="mail" className="footer-icon" src={mail} />
 			</a> */}
-			<a href="/" key="discord" className="w-1/4 mx-6">
+			<a href="https://gitcoin.co/discord" key="discord" className="w-1/4 mx-6">
 				<Image preview={false} key="discord" className="footer-icon" src={discord} />
 			</a>
 		</div>
@@ -33,7 +33,14 @@ const Footer = () => {
 					Gitcoin
 				</a>
 			</span>
-			<span className="footer-font-v3"> | Direct by</span>
+
+			<span className="footer-font-v1">| Built by </span>
+			<span className="footer-font-v2">
+				<a href="https://moonshotcollective.space/">
+					Moonshot Collective
+				</a>
+			</span>
+			<span className="footer-font-v3"> | Directed by</span>
 			<span className="footer-font-v3">&nbsp;</span>
 			<span className="footer-font-v2">
 				<a href="http://www.joshblaylock.com/">
@@ -41,14 +48,13 @@ const Footer = () => {
 				</a>
 			</span>
 			<span className="footer-font-v3"> | Illustrated by</span>
-			<span className="footer-font-v2">&nbsp;</span>
+
 			<span className="footer-font-v2">
 				<a href="http://www.joshblaylock.com/">
 					Blaylock Comics
 				</a>
 			</span>
 			<span className="footer-font-v3">&nbsp;</span><span className="footer-font-v3"> | Produced by</span>
-			<span className="footer-font-v2">&nbsp;</span>
 			<span className="footer-font-v2">
 				<a href="http://www.joshblaylock.com/">
 					Blaylock Comics

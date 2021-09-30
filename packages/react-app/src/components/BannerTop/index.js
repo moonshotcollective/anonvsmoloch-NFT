@@ -22,7 +22,8 @@ const BannerTop = () => {
 					(
 					<div className="frame-14435 bg-green-teal overflow-hidden min-w-full">
 						<img alt="" className="group-33932" src={group339321x} />
-						<div className="text-5 font-librefranklin text-2xl">Lorem Ipsum is simply dummy text of the printing and typesetting industry</div>
+						<div className="text-5 font-librefranklin text-2xl">
+						</div>
 						<Button className="bannertop-twitterfollowbutton">
 							<img alt="Twitter Logo" className="bannertop-vector" src={vector12x} />
 							<div className="bannertop-follow">Follow</div>
