@@ -29,23 +29,34 @@ const BannerBottom = () => {
 								<div className="overlap-group-6 mr-12">
 
 								</div>
-								<Button className="bannerbottom-joinnow mx-8 bg-green-teal join-now font-spacemono">
-								</Button>
+								{/* <Button className="bannerbottom-joinnow mx-8 bg-green-teal join-now font-spacemono">
+								</Button> */}
 							</div>
 						</div>
 					)
 					:
 					(
-						<div class="h-full bg-green-dark-green bg-opacity-75 px-8 pt-16 pb-24 overflow-hidden text-center relative">
-							<h2 class="tracking-widest text-xs title-font font-medium mb-1 text-green-teal text-3xl font-spacemono">
-								Get the latest Edition
-							</h2>
-							<div className="text-2xl font-librefranklin text-white p-6">
-								Lorem Ipsum is simply dummy text.
+						// <div class="h-full bg-green-dark-green bg-opacity-75 px-8 pt-16 pb-24 overflow-hidden text-center relative">
+						// 	<h2 class="tracking-widest text-xs title-font font-medium mb-1 text-green-teal text-3xl font-spacemono">
+						// 		Get the latest Edition
+						// 	</h2>
+						// 	<div className="text-2xl font-librefranklin text-white p-6">
+						// 		Lorem Ipsum is simply dummy text.
+						// 	</div>
+						// 	<Button className="bannerbottom-joinnow-mobile mx-8 bg-green-teal mobile-text-join-now font-spacemono">
+						// 		<p>Join now</p>
+						// 	</Button>
+						// </div>
+						<div className="bottom-bar overflow-hidden bg-green-dark-green min-w-full">
+							<div className="overlap-group6">
+								<img alt="" className="star-1-mobile" src={star11x} />
+								<img alt="" className="bot2-1-mobile" src={bot211x} />
+								<div className="overlap-group-6 mr-12">
+
+								</div>
+								<Button className="bannerbottom-joinnow mx-8 bg-green-teal join-now font-spacemono">
+								</Button>
 							</div>
-							<Button className="bannerbottom-joinnow-mobile mx-8 bg-green-teal mobile-text-join-now font-spacemono">
-								<p>Join now</p>
-							</Button>
 						</div>
 					)}
 					</>
