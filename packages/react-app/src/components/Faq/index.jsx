@@ -8,7 +8,7 @@ import ArrowButton from "./ArrowButton";
 const { Panel } = Collapse;
 
 const getTitle = (title, index) => {
-  const num = index + 1;
+  const num = index;
   return `#${num} ${title}  `;
 };
 
