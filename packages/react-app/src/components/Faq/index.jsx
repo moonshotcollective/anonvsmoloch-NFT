@@ -33,7 +33,7 @@ const Faq = ({ sectionTitle }) => {
                   showArrow={false}
                   extra={<ArrowButton />}
                 >
-                  <p className="w-3/4">{"Youll see on October 2020"}</p>
+                  <p className="w-3/4">{"Youll see on October 2021"}</p>
                 </Panel>
                 <br />
                 <Panel
